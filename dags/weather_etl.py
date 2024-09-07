@@ -240,7 +240,7 @@ def send_email_notification(**kwargs):
         smtp_user = Variable.get("s_user")
         smtp_password = Variable.get("s_password")
         mail_from = Variable.get("s_mail_from")
-        mail_to = 'pronostico.diario.qro@gmail.com'  # Cambia esto por el destinatario real
+        mail_to = Variable.get("s_mail_to")
 
         # Crear el cuerpo del mensaje
         body = """
