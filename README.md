@@ -19,6 +19,6 @@ This project implements a weather data extraction, transformation, and loading (
 
 ## How to Use
 1. Clone the repository and set up the environment using Docker.
-2. Add your variables in the `.json` file with the name ""variables_airflow"", in a "utils" folder.
+2. Add your variables in the `.json` file with the name "airflow_variables", in a "utils" folder.
 3. Run the Airflow services using Docker Compose.
 4. The DAG will execute daily, fetching weather data, processing it, and storing the results.
