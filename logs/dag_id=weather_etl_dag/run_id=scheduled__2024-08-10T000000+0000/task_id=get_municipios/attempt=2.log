@@ -1,0 +1,136 @@
+[2024-09-04T23:58:58.051+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-09-04T23:58:58.083+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: weather_etl_dag.get_municipios scheduled__2024-08-10T00:00:00+00:00 [queued]>
+[2024-09-04T23:58:58.108+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: weather_etl_dag.get_municipios scheduled__2024-08-10T00:00:00+00:00 [queued]>
+[2024-09-04T23:58:58.112+0000] {taskinstance.py:2856} INFO - Starting attempt 2 of 2
+[2024-09-04T23:58:58.192+0000] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): get_municipios> on 2024-08-10 00:00:00+00:00
+[2024-09-04T23:58:58.205+0000] {warnings.py:112} WARNING - /usr/local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=211) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-09-04T23:58:58.208+0000] {standard_task_runner.py:72} INFO - Started process 214 to run task
+[2024-09-04T23:58:58.213+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'weather_etl_dag', 'get_municipios', 'scheduled__2024-08-10T00:00:00+00:00', '--job-id', '30', '--raw', '--subdir', 'DAGS_FOLDER/weather_etl_dag.py', '--cfg-path', '/tmp/tmp61bx9zag']
+[2024-09-04T23:58:58.216+0000] {standard_task_runner.py:105} INFO - Job 30: Subtask get_municipios
+[2024-09-04T23:58:58.392+0000] {task_command.py:467} INFO - Running <TaskInstance: weather_etl_dag.get_municipios scheduled__2024-08-10T00:00:00+00:00 [running]> on host f3059b547e1e
+[2024-09-04T23:58:58.707+0000] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='weather_etl_dag' AIRFLOW_CTX_TASK_ID='get_municipios' AIRFLOW_CTX_EXECUTION_DATE='2024-08-10T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-08-10T00:00:00+00:00'
+[2024-09-04T23:58:58.708+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-09-04T23:58:58.760+0000] {taskinstance.py:3301} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/airflow/dags/weather_etl.py", line 11, in get_municipios
+    r_user = Variable.get("r_user")
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/airflow/models/variable.py", line 145, in get
+    raise KeyError(f"Variable {key} does not exist")
+KeyError: 'Variable r_user does not exist'
+[2024-09-04T23:58:58.792+0000] {taskinstance.py:1225} INFO - Marking task as FAILED. dag_id=weather_etl_dag, task_id=get_municipios, run_id=scheduled__2024-08-10T00:00:00+00:00, execution_date=20240810T000000, start_date=20240904T235858, end_date=20240904T235858
+[2024-09-04T23:59:00.687+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-09-04T23:59:00.707+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 30 for task get_municipios ('Variable r_user does not exist'; 214)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/airflow/utils/cli.py", line 115, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 2995, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 273, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/usr/local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3149, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3173, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/airflow/dags/weather_etl.py", line 11, in get_municipios
+    r_user = Variable.get("r_user")
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/airflow/models/variable.py", line 145, in get
+    raise KeyError(f"Variable {key} does not exist")
+KeyError: 'Variable r_user does not exist'
+[2024-09-04T23:59:00.789+0000] {local_task_job_runner.py:261} INFO - Task exited with return code 1
+[2024-09-04T23:59:00.834+0000] {local_task_job_runner.py:240} INFO - ::endgroup::
+[2024-09-05T00:33:57.705+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-09-05T00:33:57.834+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: weather_etl_dag.get_municipios scheduled__2024-08-10T00:00:00+00:00 [queued]>
+[2024-09-05T00:33:57.890+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: weather_etl_dag.get_municipios scheduled__2024-08-10T00:00:00+00:00 [queued]>
+[2024-09-05T00:33:57.891+0000] {taskinstance.py:2856} INFO - Starting attempt 2 of 2
+[2024-09-05T00:33:58.035+0000] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): get_municipios> on 2024-08-10 00:00:00+00:00
+[2024-09-05T00:33:58.061+0000] {warnings.py:112} WARNING - /usr/local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=260) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-09-05T00:33:58.080+0000] {standard_task_runner.py:72} INFO - Started process 270 to run task
+[2024-09-05T00:33:58.084+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'weather_etl_dag', 'get_municipios', 'scheduled__2024-08-10T00:00:00+00:00', '--job-id', '33', '--raw', '--subdir', 'DAGS_FOLDER/weather_etl_dag.py', '--cfg-path', '/tmp/tmpmlionw6t']
+[2024-09-05T00:33:58.088+0000] {standard_task_runner.py:105} INFO - Job 33: Subtask get_municipios
+[2024-09-05T00:33:58.481+0000] {task_command.py:467} INFO - Running <TaskInstance: weather_etl_dag.get_municipios scheduled__2024-08-10T00:00:00+00:00 [running]> on host b778581f4b0f
+[2024-09-05T00:34:00.535+0000] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='weather_etl_dag' AIRFLOW_CTX_TASK_ID='get_municipios' AIRFLOW_CTX_EXECUTION_DATE='2024-08-10T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-08-10T00:00:00+00:00'
+[2024-09-05T00:34:00.583+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-09-05T00:34:01.646+0000] {logging_mixin.py:190} INFO - Conexión establecida con Redshift.
+[2024-09-05T00:34:01.647+0000] {logging_mixin.py:190} INFO - Ejecutando la consulta SQL...
+[2024-09-05T00:34:01.671+0000] {warnings.py:112} WARNING - /root/***/dags/weather_etl.py:29: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df_municipios = pd.read_sql_query(query, conn)
+
+[2024-09-05T00:34:01.837+0000] {logging_mixin.py:190} INFO - Consulta ejecutada, número de registros obtenidos: 18
+[2024-09-05T00:34:01.862+0000] {logging_mixin.py:190} INFO - Conexión a Redshift cerrada
+[2024-09-05T00:34:02.158+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-09-05T00:34:02.292+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-09-05T00:34:02.309+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=weather_etl_dag, task_id=get_municipios, run_id=scheduled__2024-08-10T00:00:00+00:00, execution_date=20240810T000000, start_date=20240905T003357, end_date=20240905T003402
+[2024-09-05T00:34:02.578+0000] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2024-09-05T00:34:02.923+0000] {taskinstance.py:3891} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-09-05T00:34:03.106+0000] {standard_task_runner.py:217} INFO - Process not found (most likely exited), stop collecting metrics
+[2024-09-05T00:34:03.203+0000] {local_task_job_runner.py:240} INFO - ::endgroup::

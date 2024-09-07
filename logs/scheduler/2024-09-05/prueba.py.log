@@ -1,0 +1,57 @@
+[2024-09-05T00:00:47.501+0000] {processor.py:186} INFO - Started process (PID=163) to work on /root/airflow/dags/prueba.py
+[2024-09-05T00:00:47.503+0000] {processor.py:914} INFO - Processing file /root/airflow/dags/prueba.py for tasks to queue
+[2024-09-05T00:00:47.508+0000] {logging_mixin.py:190} INFO - [2024-09-05T00:00:47.507+0000] {dagbag.py:587} INFO - Filling up the DagBag from /root/airflow/dags/prueba.py
+[2024-09-05T00:00:47.547+0000] {processor.py:925} INFO - DAG(s) 'test_dag' retrieved from /root/airflow/dags/prueba.py
+[2024-09-05T00:00:47.648+0000] {logging_mixin.py:190} INFO - [2024-09-05T00:00:47.647+0000] {dag.py:3211} INFO - Sync 1 DAGs
+[2024-09-05T00:00:47.753+0000] {logging_mixin.py:190} INFO - [2024-09-05T00:00:47.753+0000] {dag.py:4138} INFO - Setting next_dagrun for test_dag to None, run_after=None
+[2024-09-05T00:00:47.970+0000] {processor.py:208} INFO - Processing /root/airflow/dags/prueba.py took 0.490 seconds
+[2024-09-05T00:25:27.737+0000] {processor.py:186} INFO - Started process (PID=18) to work on /root/airflow/dags/prueba.py
+[2024-09-05T00:25:27.754+0000] {processor.py:914} INFO - Processing file /root/airflow/dags/prueba.py for tasks to queue
+[2024-09-05T00:25:27.773+0000] {logging_mixin.py:190} INFO - [2024-09-05T00:25:27.771+0000] {dagbag.py:587} INFO - Filling up the DagBag from /root/airflow/dags/prueba.py
+[2024-09-05T00:25:28.372+0000] {processor.py:925} INFO - DAG(s) 'test_dag' retrieved from /root/airflow/dags/prueba.py
+[2024-09-05T00:25:29.911+0000] {logging_mixin.py:190} INFO - [2024-09-05T00:25:29.910+0000] {override.py:1900} INFO - Created Permission View: can delete on DAG:test_dag
+[2024-09-05T00:25:30.167+0000] {logging_mixin.py:190} INFO - [2024-09-05T00:25:30.167+0000] {override.py:1900} INFO - Created Permission View: can edit on DAG:test_dag
+[2024-09-05T00:25:30.504+0000] {logging_mixin.py:190} INFO - [2024-09-05T00:25:30.504+0000] {override.py:1900} INFO - Created Permission View: can read on DAG:test_dag
+[2024-09-05T00:25:31.023+0000] {logging_mixin.py:190} INFO - [2024-09-05T00:25:31.022+0000] {override.py:1900} INFO - Created Permission View: can create on DAG Run:test_dag
+[2024-09-05T00:25:31.123+0000] {logging_mixin.py:190} INFO - [2024-09-05T00:25:31.122+0000] {override.py:1900} INFO - Created Permission View: can delete on DAG Run:test_dag
+[2024-09-05T00:25:31.204+0000] {logging_mixin.py:190} INFO - [2024-09-05T00:25:31.203+0000] {override.py:1900} INFO - Created Permission View: can read on DAG Run:test_dag
+[2024-09-05T00:25:31.381+0000] {logging_mixin.py:190} INFO - [2024-09-05T00:25:31.381+0000] {override.py:1900} INFO - Created Permission View: menu access on DAG Run:test_dag
+[2024-09-05T00:25:31.383+0000] {logging_mixin.py:190} INFO - [2024-09-05T00:25:31.383+0000] {dag.py:3211} INFO - Sync 1 DAGs
+[2024-09-05T00:25:31.421+0000] {logging_mixin.py:190} INFO - [2024-09-05T00:25:31.421+0000] {dag.py:3234} INFO - Creating ORM DAG for test_dag
+[2024-09-05T00:25:31.475+0000] {logging_mixin.py:190} INFO - [2024-09-05T00:25:31.474+0000] {dag.py:4138} INFO - Setting next_dagrun for test_dag to 2024-09-03 00:00:00+00:00, run_after=2024-09-03 00:00:00+00:00
+[2024-09-05T00:25:31.931+0000] {processor.py:208} INFO - Processing /root/airflow/dags/prueba.py took 4.261 seconds
+[2024-09-05T00:35:32.068+0000] {processor.py:186} INFO - Started process (PID=168) to work on /root/airflow/dags/prueba.py
+[2024-09-05T00:35:32.069+0000] {processor.py:914} INFO - Processing file /root/airflow/dags/prueba.py for tasks to queue
+[2024-09-05T00:35:32.081+0000] {logging_mixin.py:190} INFO - [2024-09-05T00:35:32.081+0000] {dagbag.py:587} INFO - Filling up the DagBag from /root/airflow/dags/prueba.py
+[2024-09-05T00:35:32.315+0000] {processor.py:925} INFO - DAG(s) 'test_dag' retrieved from /root/airflow/dags/prueba.py
+[2024-09-05T00:35:32.423+0000] {logging_mixin.py:190} INFO - [2024-09-05T00:35:32.422+0000] {dag.py:3211} INFO - Sync 1 DAGs
+[2024-09-05T00:35:32.567+0000] {logging_mixin.py:190} INFO - [2024-09-05T00:35:32.567+0000] {dag.py:4138} INFO - Setting next_dagrun for test_dag to 2024-09-03 00:00:00+00:00, run_after=2024-09-03 00:00:00+00:00
+[2024-09-05T00:35:32.969+0000] {processor.py:208} INFO - Processing /root/airflow/dags/prueba.py took 0.917 seconds
+[2024-09-05T00:45:33.638+0000] {processor.py:186} INFO - Started process (PID=310) to work on /root/airflow/dags/prueba.py
+[2024-09-05T00:45:33.639+0000] {processor.py:914} INFO - Processing file /root/airflow/dags/prueba.py for tasks to queue
+[2024-09-05T00:45:33.644+0000] {logging_mixin.py:190} INFO - [2024-09-05T00:45:33.643+0000] {dagbag.py:587} INFO - Filling up the DagBag from /root/airflow/dags/prueba.py
+[2024-09-05T00:45:33.676+0000] {processor.py:925} INFO - DAG(s) 'test_dag' retrieved from /root/airflow/dags/prueba.py
+[2024-09-05T00:45:33.791+0000] {logging_mixin.py:190} INFO - [2024-09-05T00:45:33.791+0000] {dag.py:3211} INFO - Sync 1 DAGs
+[2024-09-05T00:45:33.842+0000] {logging_mixin.py:190} INFO - [2024-09-05T00:45:33.841+0000] {dag.py:4138} INFO - Setting next_dagrun for test_dag to 2024-09-03 00:00:00+00:00, run_after=2024-09-03 00:00:00+00:00
+[2024-09-05T00:45:34.455+0000] {processor.py:208} INFO - Processing /root/airflow/dags/prueba.py took 0.825 seconds
+[2024-09-05T00:55:35.029+0000] {processor.py:186} INFO - Started process (PID=456) to work on /root/airflow/dags/prueba.py
+[2024-09-05T00:55:35.049+0000] {processor.py:914} INFO - Processing file /root/airflow/dags/prueba.py for tasks to queue
+[2024-09-05T00:55:35.066+0000] {logging_mixin.py:190} INFO - [2024-09-05T00:55:35.066+0000] {dagbag.py:587} INFO - Filling up the DagBag from /root/airflow/dags/prueba.py
+[2024-09-05T00:55:35.118+0000] {processor.py:925} INFO - DAG(s) 'test_dag' retrieved from /root/airflow/dags/prueba.py
+[2024-09-05T00:55:35.278+0000] {logging_mixin.py:190} INFO - [2024-09-05T00:55:35.278+0000] {dag.py:3211} INFO - Sync 1 DAGs
+[2024-09-05T00:55:35.400+0000] {logging_mixin.py:190} INFO - [2024-09-05T00:55:35.398+0000] {dag.py:4138} INFO - Setting next_dagrun for test_dag to 2024-09-03 00:00:00+00:00, run_after=2024-09-03 00:00:00+00:00
+[2024-09-05T00:55:36.078+0000] {processor.py:208} INFO - Processing /root/airflow/dags/prueba.py took 1.094 seconds
+[2024-09-05T01:05:36.688+0000] {processor.py:186} INFO - Started process (PID=601) to work on /root/airflow/dags/prueba.py
+[2024-09-05T01:05:36.689+0000] {processor.py:914} INFO - Processing file /root/airflow/dags/prueba.py for tasks to queue
+[2024-09-05T01:05:36.692+0000] {logging_mixin.py:190} INFO - [2024-09-05T01:05:36.691+0000] {dagbag.py:587} INFO - Filling up the DagBag from /root/airflow/dags/prueba.py
+[2024-09-05T01:05:36.709+0000] {processor.py:925} INFO - DAG(s) 'test_dag' retrieved from /root/airflow/dags/prueba.py
+[2024-09-05T01:05:36.748+0000] {logging_mixin.py:190} INFO - [2024-09-05T01:05:36.748+0000] {dag.py:3211} INFO - Sync 1 DAGs
+[2024-09-05T01:05:36.786+0000] {logging_mixin.py:190} INFO - [2024-09-05T01:05:36.786+0000] {dag.py:4138} INFO - Setting next_dagrun for test_dag to 2024-09-03 00:00:00+00:00, run_after=2024-09-03 00:00:00+00:00
+[2024-09-05T01:05:36.894+0000] {processor.py:208} INFO - Processing /root/airflow/dags/prueba.py took 0.219 seconds
+[2024-09-05T01:15:37.697+0000] {processor.py:186} INFO - Started process (PID=747) to work on /root/airflow/dags/prueba.py
+[2024-09-05T01:15:37.699+0000] {processor.py:914} INFO - Processing file /root/airflow/dags/prueba.py for tasks to queue
+[2024-09-05T01:15:37.704+0000] {logging_mixin.py:190} INFO - [2024-09-05T01:15:37.704+0000] {dagbag.py:587} INFO - Filling up the DagBag from /root/airflow/dags/prueba.py
+[2024-09-05T01:15:37.723+0000] {processor.py:925} INFO - DAG(s) 'test_dag' retrieved from /root/airflow/dags/prueba.py
+[2024-09-05T01:15:37.760+0000] {logging_mixin.py:190} INFO - [2024-09-05T01:15:37.759+0000] {dag.py:3211} INFO - Sync 1 DAGs
+[2024-09-05T01:15:37.791+0000] {logging_mixin.py:190} INFO - [2024-09-05T01:15:37.791+0000] {dag.py:4138} INFO - Setting next_dagrun for test_dag to 2024-09-03 00:00:00+00:00, run_after=2024-09-03 00:00:00+00:00
+[2024-09-05T01:15:37.846+0000] {processor.py:208} INFO - Processing /root/airflow/dags/prueba.py took 0.155 seconds

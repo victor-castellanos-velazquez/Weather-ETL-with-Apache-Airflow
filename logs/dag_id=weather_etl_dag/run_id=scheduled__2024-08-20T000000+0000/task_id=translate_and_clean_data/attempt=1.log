@@ -1,0 +1,38 @@
+[2024-08-21T01:48:10.753+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-08-21T01:48:10.788+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: weather_etl_dag.translate_and_clean_data scheduled__2024-08-20T00:00:00+00:00 [queued]>
+[2024-08-21T01:48:10.816+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: weather_etl_dag.translate_and_clean_data scheduled__2024-08-20T00:00:00+00:00 [queued]>
+[2024-08-21T01:48:10.830+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-08-21T01:48:11.753+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): translate_and_clean_data> on 2024-08-20 00:00:00+00:00
+[2024-08-21T01:48:11.761+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62: DeprecationWarning: This process (pid=327) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-08-21T01:48:11.763+0000] {standard_task_runner.py:64} INFO - Started process 329 to run task
+[2024-08-21T01:48:11.763+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'weather_etl_dag', 'translate_and_clean_data', 'scheduled__2024-08-20T00:00:00+00:00', '--job-id', '270', '--raw', '--subdir', 'DAGS_FOLDER/weather_etl_dag.py', '--cfg-path', '/tmp/tmpt2qmkmwi']
+[2024-08-21T01:48:11.765+0000] {standard_task_runner.py:91} INFO - Job 270: Subtask translate_and_clean_data
+[2024-08-21T01:48:11.887+0000] {task_command.py:426} INFO - Running <TaskInstance: weather_etl_dag.translate_and_clean_data scheduled__2024-08-20T00:00:00+00:00 [running]> on host b7290fbe53d7
+[2024-08-21T01:48:12.060+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='weather_etl_dag' AIRFLOW_CTX_TASK_ID='translate_and_clean_data' AIRFLOW_CTX_EXECUTION_DATE='2024-08-20T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-08-20T00:00:00+00:00'
+[2024-08-21T01:48:12.062+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-08-21T01:48:12.161+0000] {logging_mixin.py:188} INFO - recuperando dataframe de pronosticos desde xcom
+[2024-08-21T01:48:12.224+0000] {logging_mixin.py:188} INFO - numero de registros en pronosticos:18
+[2024-08-21T01:48:12.271+0000] {logging_mixin.py:188} INFO - Pronósticos antes de limpiar y traducir:    cve_mun            municipio  ... wind_kph  humidity
+0        1    AMEALCO DE BONFIL  ...     20.5        76
+1        2      PINAL DE AMOLES  ...     23.0        74
+2        3          ARROYO SECO  ...     13.7        84
+3        4  CADEREYTA DE MONTES  ...     16.9        76
+4        5                COLON  ...     23.0        74
+
+[5 rows x 10 columns]
+[2024-08-21T01:49:14.750+0000] {logging_mixin.py:188} INFO - Pronósticos después de limpiar y traducir:    cve_mun            municipio  ... viento_kph  humedad
+0        1    Amealco De Bonfil  ...       20.5       76
+1        2      Pinal De Amoles  ...       23.0       74
+2        3          Arroyo Seco  ...       13.7       84
+3        4  Cadereyta De Montes  ...       16.9       76
+4        5                Colon  ...       23.0       74
+
+[5 rows x 10 columns]
+[2024-08-21T01:49:14.805+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-08-21T01:49:14.806+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-08-21T01:49:14.813+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=weather_etl_dag, task_id=translate_and_clean_data, run_id=scheduled__2024-08-20T00:00:00+00:00, execution_date=20240820T000000, start_date=20240821T014810, end_date=20240821T014914
+[2024-08-21T01:49:14.876+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2024-08-21T01:49:14.898+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-08-21T01:49:14.940+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

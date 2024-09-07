@@ -1,0 +1,59 @@
+[2024-08-26T00:01:06.120+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-08-26T00:01:06.146+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: weather_etl_dag.translate_and_clean_data scheduled__2024-08-25T00:00:00+00:00 [queued]>
+[2024-08-26T00:01:06.160+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: weather_etl_dag.translate_and_clean_data scheduled__2024-08-25T00:00:00+00:00 [queued]>
+[2024-08-26T00:01:06.161+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-08-26T00:01:06.522+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): translate_and_clean_data> on 2024-08-25 00:00:00+00:00
+[2024-08-26T00:01:06.528+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62: DeprecationWarning: This process (pid=4618) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-08-26T00:01:06.531+0000] {standard_task_runner.py:64} INFO - Started process 4620 to run task
+[2024-08-26T00:01:06.530+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'weather_etl_dag', 'translate_and_clean_data', 'scheduled__2024-08-25T00:00:00+00:00', '--job-id', '365', '--raw', '--subdir', 'DAGS_FOLDER/weather_etl_dag.py', '--cfg-path', '/tmp/tmpbba92dxg']
+[2024-08-26T00:01:06.533+0000] {standard_task_runner.py:91} INFO - Job 365: Subtask translate_and_clean_data
+[2024-08-26T00:01:06.645+0000] {task_command.py:426} INFO - Running <TaskInstance: weather_etl_dag.translate_and_clean_data scheduled__2024-08-25T00:00:00+00:00 [running]> on host b7290fbe53d7
+[2024-08-26T00:01:06.933+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='weather_etl_dag' AIRFLOW_CTX_TASK_ID='translate_and_clean_data' AIRFLOW_CTX_EXECUTION_DATE='2024-08-25T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-08-25T00:00:00+00:00'
+[2024-08-26T00:01:06.934+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-08-26T00:01:06.976+0000] {logging_mixin.py:188} INFO - recuperando dataframe de pronosticos desde xcom
+[2024-08-26T00:01:07.016+0000] {logging_mixin.py:188} INFO - numero de registros en pronosticos:18
+[2024-08-26T00:01:07.126+0000] {logging_mixin.py:188} INFO - Pronósticos antes de limpiar y traducir:    cve_mun            municipio  ... wind_kph  humidity
+0        1    AMEALCO DE BONFIL  ...     17.6        72
+1        2      PINAL DE AMOLES  ...     20.5        75
+2        3          ARROYO SECO  ...     20.5        79
+3        4  CADEREYTA DE MONTES  ...     16.9        75
+4        5                COLON  ...     20.5        75
+
+[5 rows x 10 columns]
+[2024-08-26T00:02:04.241+0000] {logging_mixin.py:188} INFO - Pronósticos después de limpiar y traducir:    cve_mun            municipio  ... viento_kph  humedad
+0        1    Amealco De Bonfil  ...       17.6       72
+1        2      Pinal De Amoles  ...       20.5       75
+2        3          Arroyo Seco  ...       20.5       79
+3        4  Cadereyta De Montes  ...       16.9       75
+4        5                Colon  ...       20.5       75
+
+[5 rows x 10 columns]
+[2024-08-26T00:02:04.306+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-08-26T00:02:04.307+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-08-26T00:02:04.314+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=weather_etl_dag, task_id=translate_and_clean_data, run_id=scheduled__2024-08-25T00:00:00+00:00, execution_date=20240825T000000, start_date=20240826T000106, end_date=20240826T000204
+[2024-08-26T00:02:04.388+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2024-08-26T00:02:04.411+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-08-26T00:02:04.463+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-09-05T23:55:39.162+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-09-05T23:55:39.665+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: weather_etl_dag.translate_and_clean_data scheduled__2024-08-25T00:00:00+00:00 [queued]>
+[2024-09-05T23:55:39.752+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: weather_etl_dag.translate_and_clean_data scheduled__2024-08-25T00:00:00+00:00 [queued]>
+[2024-09-05T23:55:39.752+0000] {taskinstance.py:2856} INFO - Starting attempt 1 of 2
+[2024-09-05T23:55:39.886+0000] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): translate_and_clean_data> on 2024-08-25 00:00:00+00:00
+[2024-09-05T23:55:39.893+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'weather_etl_dag', 'translate_and_clean_data', 'scheduled__2024-08-25T00:00:00+00:00', '--job-id', '164', '--raw', '--subdir', 'DAGS_FOLDER/weather_etl_dag.py', '--cfg-path', '/tmp/tmprp_i6g3q']
+[2024-09-05T23:55:39.898+0000] {standard_task_runner.py:105} INFO - Job 164: Subtask translate_and_clean_data
+[2024-09-05T23:55:39.909+0000] {warnings.py:112} WARNING - /usr/local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=476) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-09-05T23:55:39.910+0000] {standard_task_runner.py:72} INFO - Started process 487 to run task
+[2024-09-05T23:55:40.010+0000] {task_command.py:467} INFO - Running <TaskInstance: weather_etl_dag.translate_and_clean_data scheduled__2024-08-25T00:00:00+00:00 [running]> on host da9f5d3bcb59
+[2024-09-05T23:55:41.373+0000] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='weather_etl_dag' AIRFLOW_CTX_TASK_ID='translate_and_clean_data' AIRFLOW_CTX_EXECUTION_DATE='2024-08-25T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-08-25T00:00:00+00:00'
+[2024-09-05T23:55:41.383+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-09-05T23:56:46.565+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-09-05T23:56:47.069+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-09-05T23:56:47.070+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=weather_etl_dag, task_id=translate_and_clean_data, run_id=scheduled__2024-08-25T00:00:00+00:00, execution_date=20240825T000000, start_date=20240905T235539, end_date=20240905T235647
+[2024-09-05T23:56:47.543+0000] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2024-09-05T23:56:50.159+0000] {standard_task_runner.py:217} INFO - Process not found (most likely exited), stop collecting metrics
+[2024-09-05T23:56:52.957+0000] {taskinstance.py:3891} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-09-05T23:56:53.023+0000] {local_task_job_runner.py:240} INFO - ::endgroup::

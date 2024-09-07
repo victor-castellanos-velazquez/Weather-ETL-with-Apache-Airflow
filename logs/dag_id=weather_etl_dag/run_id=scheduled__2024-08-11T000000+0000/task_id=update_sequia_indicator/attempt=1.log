@@ -1,0 +1,363 @@
+[2024-09-05T00:56:24.577+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-09-05T00:56:24.603+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: weather_etl_dag.update_sequia_indicator scheduled__2024-08-11T00:00:00+00:00 [queued]>
+[2024-09-05T00:56:24.619+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: weather_etl_dag.update_sequia_indicator scheduled__2024-08-11T00:00:00+00:00 [queued]>
+[2024-09-05T00:56:24.711+0000] {taskinstance.py:2856} INFO - Starting attempt 1 of 2
+[2024-09-05T00:56:25.111+0000] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): update_sequia_indicator> on 2024-08-11 00:00:00+00:00
+[2024-09-05T00:56:25.117+0000] {warnings.py:112} WARNING - /usr/local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=1153) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-09-05T00:56:25.120+0000] {standard_task_runner.py:72} INFO - Started process 1155 to run task
+[2024-09-05T00:56:25.120+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'weather_etl_dag', 'update_sequia_indicator', 'scheduled__2024-08-11T00:00:00+00:00', '--job-id', '129', '--raw', '--subdir', 'DAGS_FOLDER/weather_etl_dag.py', '--cfg-path', '/tmp/tmp7n5v09vy']
+[2024-09-05T00:56:25.123+0000] {standard_task_runner.py:105} INFO - Job 129: Subtask update_sequia_indicator
+[2024-09-05T00:56:25.324+0000] {task_command.py:467} INFO - Running <TaskInstance: weather_etl_dag.update_sequia_indicator scheduled__2024-08-11T00:00:00+00:00 [running]> on host b778581f4b0f
+[2024-09-05T00:56:25.823+0000] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='weather_etl_dag' AIRFLOW_CTX_TASK_ID='update_sequia_indicator' AIRFLOW_CTX_EXECUTION_DATE='2024-08-11T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-08-11T00:00:00+00:00'
+[2024-09-05T00:56:25.824+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-09-05T00:56:25.847+0000] {logging_mixin.py:190} INFO - Iniciando conexión a Redshift para actualizar sequía
+[2024-09-05T00:56:26.091+0000] {logging_mixin.py:190} INFO - Número de registros a actualizar en la tabla: 288
+[2024-09-05T00:56:26.115+0000] {logging_mixin.py:190} INFO - Datos para actualizar en la tabla:    cve_mun            municipio fecha_pronostico indicador_sequia
+0        1    Amealco De Bonfil       2024-09-04               D4
+1        2      Pinal De Amoles       2024-09-04               D1
+2        3          Arroyo Seco       2024-09-04               D0
+3        4  Cadereyta De Montes       2024-09-04               D3
+4        5                Colon       2024-09-04               D4
+[2024-09-05T00:57:20.078+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 1, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:20.390+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 2, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:20.671+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 3, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:20.894+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 4, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:21.163+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 5, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:21.403+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 6, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:21.560+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 7, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:21.684+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 8, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:21.931+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 9, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:22.176+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 10, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:22.402+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 11, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:22.758+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 12, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:22.996+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 13, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:23.310+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 14, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:23.513+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 15, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:23.760+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 16, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:24.019+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 17, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:24.203+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 18, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:24.503+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 1, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:24.697+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 2, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:24.852+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 3, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:25.110+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 4, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:25.439+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 5, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:25.604+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 6, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:25.817+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 7, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:26.094+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 8, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:26.375+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 9, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:26.535+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 10, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:26.735+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 11, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:27.038+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 12, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:27.206+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 13, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:27.421+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 14, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:27.750+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 15, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:28.059+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 16, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:28.282+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 17, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:28.460+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 18, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:28.704+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 1, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:28.889+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 2, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:29.052+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 3, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:29.322+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 4, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:29.530+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 5, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:29.697+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 6, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:29.863+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 7, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:30.119+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 8, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:30.363+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 9, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:30.795+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 10, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:31.144+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 11, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:31.459+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 12, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:31.627+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 13, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:31.815+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 14, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:32.015+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 15, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:32.208+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 16, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:32.393+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 17, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:32.630+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 18, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:32.960+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 1, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:33.151+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 2, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:33.347+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 3, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:33.649+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 4, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:34.014+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 5, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:34.327+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 6, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:34.634+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 7, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:34.848+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 8, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:35.336+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 9, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:35.812+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 10, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:36.325+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 11, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:36.749+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 12, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:36.983+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 13, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:37.289+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 14, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:37.651+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 15, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:37.819+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 16, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:38.044+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 17, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:38.223+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 18, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:38.431+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 1, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:38.836+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 2, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:39.164+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 3, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:39.366+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 4, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:39.529+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 5, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:39.790+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 6, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:40.110+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 7, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:40.289+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 8, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:40.478+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 9, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:40.751+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 10, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:40.951+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 11, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:41.122+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 12, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:41.506+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 13, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:41.826+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 14, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:42.027+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 15, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:42.204+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 16, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:42.426+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 17, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:42.593+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 18, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:42.986+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 1, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:43.199+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 2, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:43.406+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 3, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:43.694+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 4, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:43.904+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 5, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:44.070+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 6, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:44.274+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 7, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:44.456+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 8, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:44.638+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 9, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:44.798+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 10, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:44.983+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 11, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:45.137+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 12, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:45.317+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 13, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:45.477+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 14, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:45.797+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 15, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:45.958+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 16, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:46.142+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 17, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:46.407+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 18, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:46.580+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 1, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:46.745+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 2, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:46.942+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 3, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:47.137+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 4, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:47.361+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 5, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:47.594+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 6, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:47.901+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 7, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:48.063+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 8, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:48.212+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 9, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:48.563+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 10, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:48.723+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 11, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:48.940+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 12, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:49.127+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 13, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:49.271+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 14, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:49.467+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 15, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:49.628+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 16, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:49.920+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 17, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:50.124+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 18, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:50.324+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 1, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:50.508+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 2, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:50.661+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 3, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:50.953+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 4, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:51.114+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 5, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:51.337+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 6, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:51.532+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 7, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:51.688+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 8, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:51.935+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 9, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:52.132+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 10, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:52.292+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 11, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:52.592+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 12, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:52.749+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 13, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:52.873+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 14, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:53.079+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 15, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:53.235+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 16, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:53.391+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 17, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:53.539+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 18, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:53.707+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 1, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:53.873+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 2, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:53.995+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 3, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:54.174+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 4, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:54.328+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 5, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:54.453+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 6, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:54.968+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 7, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:55.182+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 8, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:55.324+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 9, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:55.465+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 10, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:55.724+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 11, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:55.973+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 12, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:56.196+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 13, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:56.321+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 14, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:56.458+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 15, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:56.633+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 16, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:56.772+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 17, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:56.915+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 18, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:57.076+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 1, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:57.348+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 2, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:57.506+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 3, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:57.696+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 4, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:57.863+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 5, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:58.066+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 6, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:58.310+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 7, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:58.456+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 8, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:58.572+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 9, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:58.817+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 10, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:58.977+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 11, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:59.125+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 12, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:59.346+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 13, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:59.503+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 14, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:59.618+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 15, fecha_pronostico: 2024-09-04
+[2024-09-05T00:57:59.857+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 16, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:00.003+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 17, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:00.126+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 18, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:00.327+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 1, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:00.486+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 2, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:00.602+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 3, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:00.847+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 4, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:01.003+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 5, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:01.174+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 6, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:01.328+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 7, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:01.448+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 8, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:01.667+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 9, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:01.923+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 10, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:02.072+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 11, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:02.191+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 12, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:02.401+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 13, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:02.558+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 14, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:02.672+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 15, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:02.907+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 16, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:03.105+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 17, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:03.260+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 18, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:03.614+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 1, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:03.754+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 2, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:03.881+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 3, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:04.124+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 4, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:04.272+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 5, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:04.402+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 6, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:04.616+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 7, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:04.775+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 8, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:04.892+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 9, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:05.206+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 10, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:05.403+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 11, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:05.785+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 12, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:05.988+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 13, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:06.148+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 14, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:06.458+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 15, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:06.762+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 16, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:06.947+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 17, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:07.205+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 18, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:07.443+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 1, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:07.833+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 2, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:07.998+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 3, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:08.177+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 4, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:08.379+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 5, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:08.526+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 6, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:08.682+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 7, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:08.831+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 8, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:09.196+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 9, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:09.381+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 10, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:09.537+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 11, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:09.757+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 12, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:09.914+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 13, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:10.112+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 14, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:10.278+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 15, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:10.452+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 16, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:10.603+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 17, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:10.738+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 18, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:10.906+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 1, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:11.023+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 2, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:11.294+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 3, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:11.573+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 4, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:11.708+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 5, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:11.848+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 6, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:12.000+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 7, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:12.118+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 8, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:12.302+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 9, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:12.454+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 10, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:12.621+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 11, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:12.869+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 12, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:13.054+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 13, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:13.270+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 14, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:13.525+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 15, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:13.909+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 16, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:14.088+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 17, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:14.297+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 18, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:14.592+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 1, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:14.961+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 2, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:15.126+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 3, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:15.473+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 4, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:15.846+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 5, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:16.221+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 6, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:16.503+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 7, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:16.904+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 8, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:17.114+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 9, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:17.354+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 10, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:17.605+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 11, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:17.787+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 12, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:18.030+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 13, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:18.418+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 14, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:18.649+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 15, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:18.811+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 16, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:19.043+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 17, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:19.186+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 18, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:19.527+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 1, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:19.701+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 2, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:19.995+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 3, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:20.149+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 4, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:20.282+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 5, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:20.483+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 6, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:20.633+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 7, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:20.749+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 8, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:20.996+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 9, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:21.144+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 10, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:21.304+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 11, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:21.526+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 12, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:21.685+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 13, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:21.856+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 14, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:22.120+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 15, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:22.264+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 16, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:22.446+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 17, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:22.739+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 18, fecha_pronostico: 2024-09-04
+[2024-09-05T00:58:22.918+0000] {logging_mixin.py:190} INFO - Todas las actualizaciones se han realizado con éxito
+[2024-09-05T00:58:22.919+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-09-05T00:58:22.932+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-09-05T00:58:22.933+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=weather_etl_dag, task_id=update_sequia_indicator, run_id=scheduled__2024-08-11T00:00:00+00:00, execution_date=20240811T000000, start_date=20240905T005624, end_date=20240905T005822
+[2024-09-05T00:58:23.033+0000] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2024-09-05T00:58:23.055+0000] {taskinstance.py:3891} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-09-05T00:58:23.096+0000] {local_task_job_runner.py:240} INFO - ::endgroup::
+[2024-09-05T18:19:06.369+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-09-05T18:19:06.433+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: weather_etl_dag.update_sequia_indicator scheduled__2024-08-11T00:00:00+00:00 [queued]>
+[2024-09-05T18:19:06.451+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: weather_etl_dag.update_sequia_indicator scheduled__2024-08-11T00:00:00+00:00 [queued]>
+[2024-09-05T18:19:06.452+0000] {taskinstance.py:2856} INFO - Starting attempt 1 of 2
+[2024-09-05T18:19:06.581+0000] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): update_sequia_indicator> on 2024-08-11 00:00:00+00:00
+[2024-09-05T18:19:06.587+0000] {warnings.py:112} WARNING - /usr/local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=1133) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-09-05T18:19:06.589+0000] {standard_task_runner.py:72} INFO - Started process 1135 to run task
+[2024-09-05T18:19:06.590+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'weather_etl_dag', 'update_sequia_indicator', 'scheduled__2024-08-11T00:00:00+00:00', '--job-id', '111', '--raw', '--subdir', 'DAGS_FOLDER/weather_etl_dag.py', '--cfg-path', '/tmp/tmp1tsos0bp']
+[2024-09-05T18:19:06.593+0000] {standard_task_runner.py:105} INFO - Job 111: Subtask update_sequia_indicator
+[2024-09-05T18:19:07.192+0000] {task_command.py:467} INFO - Running <TaskInstance: weather_etl_dag.update_sequia_indicator scheduled__2024-08-11T00:00:00+00:00 [running]> on host 0b8eaea5e88c
+[2024-09-05T18:19:08.534+0000] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='weather_etl_dag' AIRFLOW_CTX_TASK_ID='update_sequia_indicator' AIRFLOW_CTX_EXECUTION_DATE='2024-08-11T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-08-11T00:00:00+00:00'
+[2024-09-05T18:19:08.608+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-09-05T18:19:08.666+0000] {logging_mixin.py:190} INFO - Iniciando conexión a Redshift para actualizar sequía
+[2024-09-05T18:19:08.892+0000] {logging_mixin.py:190} INFO - Número de registros a actualizar en la tabla: 18
+[2024-09-05T18:19:08.904+0000] {logging_mixin.py:190} INFO - Datos para actualizar en la tabla:    cve_mun            municipio fecha_pronostico indicador_sequia
+0        1    Amealco De Bonfil       2024-09-05               D4
+1        2      Pinal De Amoles       2024-09-05               D1
+2        3          Arroyo Seco       2024-09-05               D0
+3        4  Cadereyta De Montes       2024-09-05               D3
+4        5                Colon       2024-09-05               D4
+[2024-09-05T18:19:09.813+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 1, fecha_pronostico: 2024-09-05
+[2024-09-05T18:19:09.954+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 2, fecha_pronostico: 2024-09-05
+[2024-09-05T18:19:10.091+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 3, fecha_pronostico: 2024-09-05
+[2024-09-05T18:19:10.233+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 4, fecha_pronostico: 2024-09-05
+[2024-09-05T18:19:10.373+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 5, fecha_pronostico: 2024-09-05
+[2024-09-05T18:19:10.514+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 6, fecha_pronostico: 2024-09-05
+[2024-09-05T18:19:10.632+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 7, fecha_pronostico: 2024-09-05
+[2024-09-05T18:19:10.750+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 8, fecha_pronostico: 2024-09-05
+[2024-09-05T18:19:10.881+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 9, fecha_pronostico: 2024-09-05
+[2024-09-05T18:19:10.999+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 10, fecha_pronostico: 2024-09-05
+[2024-09-05T18:19:11.116+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 11, fecha_pronostico: 2024-09-05
+[2024-09-05T18:19:11.234+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 12, fecha_pronostico: 2024-09-05
+[2024-09-05T18:19:11.352+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 13, fecha_pronostico: 2024-09-05
+[2024-09-05T18:19:11.476+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 14, fecha_pronostico: 2024-09-05
+[2024-09-05T18:19:11.602+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 15, fecha_pronostico: 2024-09-05
+[2024-09-05T18:19:11.721+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 16, fecha_pronostico: 2024-09-05
+[2024-09-05T18:19:11.839+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 17, fecha_pronostico: 2024-09-05
+[2024-09-05T18:19:11.958+0000] {logging_mixin.py:190} INFO - Actualización realizada para cve_mun: 18, fecha_pronostico: 2024-09-05
+[2024-09-05T18:19:12.075+0000] {logging_mixin.py:190} INFO - Todas las actualizaciones se han realizado con éxito
+[2024-09-05T18:19:12.077+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-09-05T18:19:12.088+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-09-05T18:19:12.089+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=weather_etl_dag, task_id=update_sequia_indicator, run_id=scheduled__2024-08-11T00:00:00+00:00, execution_date=20240811T000000, start_date=20240905T181906, end_date=20240905T181912
+[2024-09-05T18:19:12.214+0000] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2024-09-05T18:19:12.255+0000] {local_task_job_runner.py:240} INFO - ::endgroup::

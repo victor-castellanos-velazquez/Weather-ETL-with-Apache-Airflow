@@ -1,0 +1,76 @@
+[2024-08-17T14:43:39.018+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-08-17T14:43:39.883+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: weather_etl_dag.get_forecast_and_drought_data scheduled__2024-08-16T00:00:00+00:00 [queued]>
+[2024-08-17T14:43:39.930+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: weather_etl_dag.get_forecast_and_drought_data scheduled__2024-08-16T00:00:00+00:00 [queued]>
+[2024-08-17T14:43:39.963+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-08-17T14:43:40.247+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): get_forecast_and_drought_data> on 2024-08-16 00:00:00+00:00
+[2024-08-17T14:43:40.282+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62: DeprecationWarning: This process (pid=537) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-08-17T14:43:40.284+0000] {standard_task_runner.py:64} INFO - Started process 539 to run task
+[2024-08-17T14:43:40.288+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'weather_etl_dag', 'get_forecast_and_drought_data', 'scheduled__2024-08-16T00:00:00+00:00', '--job-id', '177', '--raw', '--subdir', 'DAGS_FOLDER/weather_etl_dag.py', '--cfg-path', '/tmp/tmpgv3x65gs']
+[2024-08-17T14:43:40.312+0000] {standard_task_runner.py:91} INFO - Job 177: Subtask get_forecast_and_drought_data
+[2024-08-17T14:43:40.707+0000] {task_command.py:426} INFO - Running <TaskInstance: weather_etl_dag.get_forecast_and_drought_data scheduled__2024-08-16T00:00:00+00:00 [running]> on host 40ce90ebbdd9
+[2024-08-17T14:43:41.423+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='weather_etl_dag' AIRFLOW_CTX_TASK_ID='get_forecast_and_drought_data' AIRFLOW_CTX_EXECUTION_DATE='2024-08-16T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-08-16T00:00:00+00:00'
+[2024-08-17T14:43:41.436+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-08-17T14:43:42.615+0000] {warnings.py:112} WARNING - /opt/***/dags/weather_etl_dag.py:249: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df_pronosticos_clima = pd.read_sql_query(query, conn)
+
+[2024-08-17T14:43:43.095+0000] {warnings.py:112} WARNING - /opt/***/dags/weather_etl_dag.py:253: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df_sequia = pd.read_sql_query(query, conn)
+
+[2024-08-17T14:43:48.232+0000] {logging_mixin.py:188} INFO - Pronósticos clima obtenidos:    cve_mun            municipio fecha_pronostico indicador_sequia
+0        1    Amealco De Bonfil       2024-08-17             None
+1        2      Pinal De Amoles       2024-08-17             None
+2        3          Arroyo Seco       2024-08-17             None
+3        4  Cadereyta De Montes       2024-08-17             None
+4        5                Colon       2024-08-17             None
+[2024-08-17T14:43:48.267+0000] {logging_mixin.py:188} INFO - Datos de sequía obtenidos:    cve_mun          nombre_mun  cve_ent               entidad       fecha valor
+0        1   Amealco de Bonfil       22  Querétaro de Arteaga  2003-03-31    D0
+1       10  Landa de Matamoros       22  Querétaro de Arteaga  2003-06-30    D0
+2        2     Pinal de Amoles       22  Querétaro de Arteaga  2004-09-30    D0
+3        3         Arroyo Seco       22  Querétaro de Arteaga  2004-09-30    D0
+4        9     Jalpan de Serra       22  Querétaro de Arteaga  2004-09-30    D0
+[2024-08-17T14:43:49.373+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-08-17T14:43:49.374+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-08-17T14:43:49.388+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=weather_etl_dag, task_id=get_forecast_and_drought_data, run_id=scheduled__2024-08-16T00:00:00+00:00, execution_date=20240816T000000, start_date=20240817T144339, end_date=20240817T144349
+[2024-08-17T14:43:50.037+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2024-08-17T14:43:50.147+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-08-17T14:43:50.410+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-09-05T18:19:46.388+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-09-05T18:19:46.470+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: weather_etl_dag.get_forecast_and_drought_data scheduled__2024-08-16T00:00:00+00:00 [queued]>
+[2024-09-05T18:19:46.478+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: weather_etl_dag.get_forecast_and_drought_data scheduled__2024-08-16T00:00:00+00:00 [queued]>
+[2024-09-05T18:19:46.479+0000] {taskinstance.py:2856} INFO - Starting attempt 1 of 2
+[2024-09-05T18:19:46.645+0000] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): get_forecast_and_drought_data> on 2024-08-16 00:00:00+00:00
+[2024-09-05T18:19:46.653+0000] {warnings.py:112} WARNING - /usr/local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=1190) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-09-05T18:19:46.662+0000] {standard_task_runner.py:72} INFO - Started process 1194 to run task
+[2024-09-05T18:19:46.655+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'weather_etl_dag', 'get_forecast_and_drought_data', 'scheduled__2024-08-16T00:00:00+00:00', '--job-id', '119', '--raw', '--subdir', 'DAGS_FOLDER/weather_etl_dag.py', '--cfg-path', '/tmp/tmpru33y8tr']
+[2024-09-05T18:19:46.666+0000] {standard_task_runner.py:105} INFO - Job 119: Subtask get_forecast_and_drought_data
+[2024-09-05T18:19:46.790+0000] {task_command.py:467} INFO - Running <TaskInstance: weather_etl_dag.get_forecast_and_drought_data scheduled__2024-08-16T00:00:00+00:00 [running]> on host 0b8eaea5e88c
+[2024-09-05T18:19:47.196+0000] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='weather_etl_dag' AIRFLOW_CTX_TASK_ID='get_forecast_and_drought_data' AIRFLOW_CTX_EXECUTION_DATE='2024-08-16T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-08-16T00:00:00+00:00'
+[2024-09-05T18:19:47.197+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-09-05T18:19:47.805+0000] {warnings.py:112} WARNING - /root/***/dags/weather_etl.py:163: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df_pronosticos_clima = pd.read_sql_query(query, conn)
+
+[2024-09-05T18:19:47.982+0000] {warnings.py:112} WARNING - /root/***/dags/weather_etl.py:167: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df_sequia = pd.read_sql_query(query, conn)
+
+[2024-09-05T18:19:48.407+0000] {logging_mixin.py:190} INFO - Pronósticos clima obtenidos:    cve_mun            municipio fecha_pronostico indicador_sequia
+0        1    Amealco De Bonfil       2024-09-05               D4
+1        2      Pinal De Amoles       2024-09-05               D1
+2        3          Arroyo Seco       2024-09-05               D0
+3        4  Cadereyta De Montes       2024-09-05               D3
+4        5                Colon       2024-09-05               D4
+[2024-09-05T18:19:48.416+0000] {logging_mixin.py:190} INFO - Datos de sequía obtenidos:    cve_mun          nombre_mun  cve_ent               entidad       fecha valor
+0        1   Amealco de Bonfil       22  Querétaro de Arteaga  2003-03-31    D0
+1       10  Landa de Matamoros       22  Querétaro de Arteaga  2003-06-30    D0
+2        2     Pinal de Amoles       22  Querétaro de Arteaga  2004-09-30    D0
+3        3         Arroyo Seco       22  Querétaro de Arteaga  2004-09-30    D0
+4        9     Jalpan de Serra       22  Querétaro de Arteaga  2004-09-30    D0
+[2024-09-05T18:19:48.666+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-09-05T18:19:48.683+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-09-05T18:19:48.684+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=weather_etl_dag, task_id=get_forecast_and_drought_data, run_id=scheduled__2024-08-16T00:00:00+00:00, execution_date=20240816T000000, start_date=20240905T181946, end_date=20240905T181948
+[2024-09-05T18:19:48.762+0000] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2024-09-05T18:19:48.789+0000] {taskinstance.py:3891} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-09-05T18:19:48.875+0000] {local_task_job_runner.py:240} INFO - ::endgroup::

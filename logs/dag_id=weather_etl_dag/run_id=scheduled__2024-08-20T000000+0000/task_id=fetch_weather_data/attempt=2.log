@@ -1,0 +1,20 @@
+[2024-09-05T23:45:05.425+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-09-05T23:45:06.175+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: weather_etl_dag.fetch_weather_data scheduled__2024-08-20T00:00:00+00:00 [queued]>
+[2024-09-05T23:45:06.345+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: weather_etl_dag.fetch_weather_data scheduled__2024-08-20T00:00:00+00:00 [queued]>
+[2024-09-05T23:45:06.346+0000] {taskinstance.py:2856} INFO - Starting attempt 2 of 3
+[2024-09-05T23:45:06.618+0000] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): fetch_weather_data> on 2024-08-20 00:00:00+00:00
+[2024-09-05T23:45:06.624+0000] {warnings.py:112} WARNING - /usr/local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=259) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-09-05T23:45:06.630+0000] {standard_task_runner.py:72} INFO - Started process 280 to run task
+[2024-09-05T23:45:06.632+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'weather_etl_dag', 'fetch_weather_data', 'scheduled__2024-08-20T00:00:00+00:00', '--job-id', '150', '--raw', '--subdir', 'DAGS_FOLDER/weather_etl_dag.py', '--cfg-path', '/tmp/tmpp9yg0xnd']
+[2024-09-05T23:45:06.655+0000] {standard_task_runner.py:105} INFO - Job 150: Subtask fetch_weather_data
+[2024-09-05T23:45:07.216+0000] {task_command.py:467} INFO - Running <TaskInstance: weather_etl_dag.fetch_weather_data scheduled__2024-08-20T00:00:00+00:00 [running]> on host da9f5d3bcb59
+[2024-09-05T23:45:11.814+0000] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='weather_etl_dag' AIRFLOW_CTX_TASK_ID='fetch_weather_data' AIRFLOW_CTX_EXECUTION_DATE='2024-08-20T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-08-20T00:00:00+00:00'
+[2024-09-05T23:45:11.817+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-09-05T23:45:23.288+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-09-05T23:45:23.300+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-09-05T23:45:23.300+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=weather_etl_dag, task_id=fetch_weather_data, run_id=scheduled__2024-08-20T00:00:00+00:00, execution_date=20240820T000000, start_date=20240905T234506, end_date=20240905T234523
+[2024-09-05T23:45:23.596+0000] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2024-09-05T23:45:23.844+0000] {taskinstance.py:3891} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-09-05T23:45:23.905+0000] {local_task_job_runner.py:240} INFO - ::endgroup::

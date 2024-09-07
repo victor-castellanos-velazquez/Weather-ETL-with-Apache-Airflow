@@ -1,0 +1,43 @@
+[2024-09-05T00:40:18.050+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-09-05T00:40:18.173+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: weather_etl_dag.insert_weather_data scheduled__2024-08-04T00:00:00+00:00 [queued]>
+[2024-09-05T00:40:18.218+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: weather_etl_dag.insert_weather_data scheduled__2024-08-04T00:00:00+00:00 [queued]>
+[2024-09-05T00:40:18.405+0000] {taskinstance.py:2856} INFO - Starting attempt 1 of 2
+[2024-09-05T00:40:18.506+0000] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): insert_weather_data> on 2024-08-04 00:00:00+00:00
+[2024-09-05T00:40:18.538+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'weather_etl_dag', 'insert_weather_data', 'scheduled__2024-08-04T00:00:00+00:00', '--job-id', '60', '--raw', '--subdir', 'DAGS_FOLDER/weather_etl_dag.py', '--cfg-path', '/tmp/tmp6xjdy7sn']
+[2024-09-05T00:40:18.535+0000] {warnings.py:112} WARNING - /usr/local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=503) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-09-05T00:40:18.571+0000] {standard_task_runner.py:105} INFO - Job 60: Subtask insert_weather_data
+[2024-09-05T00:40:18.583+0000] {standard_task_runner.py:72} INFO - Started process 510 to run task
+[2024-09-05T00:40:18.901+0000] {task_command.py:467} INFO - Running <TaskInstance: weather_etl_dag.insert_weather_data scheduled__2024-08-04T00:00:00+00:00 [running]> on host b778581f4b0f
+[2024-09-05T00:40:19.889+0000] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='weather_etl_dag' AIRFLOW_CTX_TASK_ID='insert_weather_data' AIRFLOW_CTX_EXECUTION_DATE='2024-08-04T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-08-04T00:00:00+00:00'
+[2024-09-05T00:40:19.908+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-09-05T00:40:26.777+0000] {logging_mixin.py:190} INFO - Todos los pronósticos han sido insertados con éxito en Redshift.
+[2024-09-05T00:40:26.788+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-09-05T00:40:26.849+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-09-05T00:40:26.850+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=weather_etl_dag, task_id=insert_weather_data, run_id=scheduled__2024-08-04T00:00:00+00:00, execution_date=20240804T000000, start_date=20240905T004018, end_date=20240905T004026
+[2024-09-05T00:40:28.561+0000] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2024-09-05T00:40:28.616+0000] {taskinstance.py:3891} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-09-05T00:40:28.637+0000] {standard_task_runner.py:217} INFO - Process not found (most likely exited), stop collecting metrics
+[2024-09-05T00:40:29.076+0000] {local_task_job_runner.py:240} INFO - ::endgroup::
+[2024-09-05T18:14:55.710+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-09-05T18:14:55.806+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: weather_etl_dag.insert_weather_data scheduled__2024-08-04T00:00:00+00:00 [queued]>
+[2024-09-05T18:14:55.856+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: weather_etl_dag.insert_weather_data scheduled__2024-08-04T00:00:00+00:00 [queued]>
+[2024-09-05T18:14:55.857+0000] {taskinstance.py:2856} INFO - Starting attempt 1 of 2
+[2024-09-05T18:14:55.953+0000] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): insert_weather_data> on 2024-08-04 00:00:00+00:00
+[2024-09-05T18:14:55.963+0000] {warnings.py:112} WARNING - /usr/local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=721) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-09-05T18:14:55.965+0000] {standard_task_runner.py:72} INFO - Started process 723 to run task
+[2024-09-05T18:14:55.970+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'weather_etl_dag', 'insert_weather_data', 'scheduled__2024-08-04T00:00:00+00:00', '--job-id', '56', '--raw', '--subdir', 'DAGS_FOLDER/weather_etl_dag.py', '--cfg-path', '/tmp/tmp8b38irh_']
+[2024-09-05T18:14:55.973+0000] {standard_task_runner.py:105} INFO - Job 56: Subtask insert_weather_data
+[2024-09-05T18:14:56.243+0000] {task_command.py:467} INFO - Running <TaskInstance: weather_etl_dag.insert_weather_data scheduled__2024-08-04T00:00:00+00:00 [running]> on host 0b8eaea5e88c
+[2024-09-05T18:14:56.757+0000] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='weather_etl_dag' AIRFLOW_CTX_TASK_ID='insert_weather_data' AIRFLOW_CTX_EXECUTION_DATE='2024-08-04T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-08-04T00:00:00+00:00'
+[2024-09-05T18:14:56.759+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-09-05T18:14:57.506+0000] {logging_mixin.py:190} INFO - Ya existe un registro para la fecha de hoy. Finalizando tarea.
+[2024-09-05T18:14:57.573+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-09-05T18:14:57.586+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-09-05T18:14:57.587+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=weather_etl_dag, task_id=insert_weather_data, run_id=scheduled__2024-08-04T00:00:00+00:00, execution_date=20240804T000000, start_date=20240905T181455, end_date=20240905T181457
+[2024-09-05T18:14:57.683+0000] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2024-09-05T18:14:57.712+0000] {taskinstance.py:3891} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-09-05T18:14:57.754+0000] {local_task_job_runner.py:240} INFO - ::endgroup::

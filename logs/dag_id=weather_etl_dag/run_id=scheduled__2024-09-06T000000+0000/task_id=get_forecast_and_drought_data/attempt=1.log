@@ -1,0 +1,23 @@
+[2024-09-07T00:02:31.830+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-09-07T00:02:31.850+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: weather_etl_dag.get_forecast_and_drought_data scheduled__2024-09-06T00:00:00+00:00 [queued]>
+[2024-09-07T00:02:31.859+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: weather_etl_dag.get_forecast_and_drought_data scheduled__2024-09-06T00:00:00+00:00 [queued]>
+[2024-09-07T00:02:31.861+0000] {taskinstance.py:2856} INFO - Starting attempt 1 of 2
+[2024-09-07T00:02:31.933+0000] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): get_forecast_and_drought_data> on 2024-09-06 00:00:00+00:00
+[2024-09-07T00:02:31.937+0000] {standard_task_runner.py:72} INFO - Started process 4879 to run task
+[2024-09-07T00:02:31.942+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'weather_etl_dag', 'get_forecast_and_drought_data', 'scheduled__2024-09-06T00:00:00+00:00', '--job-id', '37', '--raw', '--subdir', 'DAGS_FOLDER/weather_etl_dag.py', '--cfg-path', '/tmp/tmp8gemqcex']
+[2024-09-07T00:02:31.948+0000] {standard_task_runner.py:105} INFO - Job 37: Subtask get_forecast_and_drought_data
+[2024-09-07T00:02:32.042+0000] {task_command.py:467} INFO - Running <TaskInstance: weather_etl_dag.get_forecast_and_drought_data scheduled__2024-09-06T00:00:00+00:00 [running]> on host ca3036c02e01
+[2024-09-07T00:02:32.306+0000] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='weather_etl_dag' AIRFLOW_CTX_TASK_ID='get_forecast_and_drought_data' AIRFLOW_CTX_EXECUTION_DATE='2024-09-06T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-09-06T00:00:00+00:00'
+[2024-09-07T00:02:32.309+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-09-07T00:02:32.894+0000] {warnings.py:109} WARNING - /root/***/dags/weather_etl.py:150: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df_pronosticos_clima = pd.read_sql_query(query, conn)
+
+[2024-09-07T00:02:33.117+0000] {warnings.py:109} WARNING - /root/***/dags/weather_etl.py:153: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df_sequia = pd.read_sql_query(query, conn)
+
+[2024-09-07T00:02:33.699+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-09-07T00:02:33.716+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-09-07T00:02:33.717+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=weather_etl_dag, task_id=get_forecast_and_drought_data, run_id=scheduled__2024-09-06T00:00:00+00:00, execution_date=20240906T000000, start_date=20240907T000231, end_date=20240907T000233
+[2024-09-07T00:02:33.793+0000] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2024-09-07T00:02:33.830+0000] {taskinstance.py:3891} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-09-07T00:02:33.872+0000] {local_task_job_runner.py:240} INFO - ::endgroup::

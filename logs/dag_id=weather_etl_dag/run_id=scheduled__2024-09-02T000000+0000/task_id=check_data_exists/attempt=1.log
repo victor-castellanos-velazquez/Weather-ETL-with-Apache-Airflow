@@ -1,0 +1,39 @@
+[2024-09-06T03:44:54.322+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-09-06T03:44:54.427+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: weather_etl_dag.check_data_exists scheduled__2024-09-02T00:00:00+00:00 [queued]>
+[2024-09-06T03:44:54.539+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: weather_etl_dag.check_data_exists scheduled__2024-09-02T00:00:00+00:00 [queued]>
+[2024-09-06T03:44:54.541+0000] {taskinstance.py:2856} INFO - Starting attempt 1 of 2
+[2024-09-06T03:44:54.752+0000] {taskinstance.py:2879} INFO - Executing <Task(PythonSensor): check_data_exists> on 2024-09-02 00:00:00+00:00
+[2024-09-06T03:44:54.757+0000] {warnings.py:112} WARNING - /usr/local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=77) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-09-06T03:44:54.760+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'weather_etl_dag', 'check_data_exists', 'scheduled__2024-09-02T00:00:00+00:00', '--job-id', '241', '--raw', '--subdir', 'DAGS_FOLDER/weather_etl_dag.py', '--cfg-path', '/tmp/tmphz9tu7gu']
+[2024-09-06T03:44:54.763+0000] {standard_task_runner.py:105} INFO - Job 241: Subtask check_data_exists
+[2024-09-06T03:44:54.759+0000] {standard_task_runner.py:72} INFO - Started process 85 to run task
+[2024-09-06T03:44:55.113+0000] {task_command.py:467} INFO - Running <TaskInstance: weather_etl_dag.check_data_exists scheduled__2024-09-02T00:00:00+00:00 [running]> on host 4b8f6e83ee7a
+[2024-09-06T03:44:55.721+0000] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='weather_etl_dag' AIRFLOW_CTX_TASK_ID='check_data_exists' AIRFLOW_CTX_EXECUTION_DATE='2024-09-02T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-09-02T00:00:00+00:00'
+[2024-09-06T03:44:55.722+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-09-06T03:44:55.764+0000] {python.py:75} INFO - Poking callable: <function check_data_exists at 0x7f159151c7c0>
+[2024-09-06T03:44:56.552+0000] {base.py:336} INFO - Success criteria met. Exiting.
+[2024-09-06T03:44:56.702+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-09-06T03:44:56.711+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=weather_etl_dag, task_id=check_data_exists, run_id=scheduled__2024-09-02T00:00:00+00:00, execution_date=20240902T000000, start_date=20240906T034454, end_date=20240906T034456
+[2024-09-06T03:44:57.043+0000] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2024-09-06T03:44:57.146+0000] {taskinstance.py:3891} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-09-06T03:44:57.189+0000] {local_task_job_runner.py:240} INFO - ::endgroup::
+[2024-09-06T14:17:30.040+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-09-06T14:17:30.126+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: weather_etl_dag.check_data_exists scheduled__2024-09-02T00:00:00+00:00 [queued]>
+[2024-09-06T14:17:30.139+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: weather_etl_dag.check_data_exists scheduled__2024-09-02T00:00:00+00:00 [queued]>
+[2024-09-06T14:17:30.139+0000] {taskinstance.py:2856} INFO - Starting attempt 1 of 2
+[2024-09-06T14:17:30.263+0000] {taskinstance.py:2879} INFO - Executing <Task(PythonSensor): check_data_exists> on 2024-09-02 00:00:00+00:00
+[2024-09-06T14:17:30.269+0000] {standard_task_runner.py:72} INFO - Started process 69 to run task
+[2024-09-06T14:17:30.274+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'weather_etl_dag', 'check_data_exists', 'scheduled__2024-09-02T00:00:00+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/weather_etl_dag.py', '--cfg-path', '/tmp/tmp79emzrxx']
+[2024-09-06T14:17:30.280+0000] {standard_task_runner.py:105} INFO - Job 5: Subtask check_data_exists
+[2024-09-06T14:17:30.472+0000] {task_command.py:467} INFO - Running <TaskInstance: weather_etl_dag.check_data_exists scheduled__2024-09-02T00:00:00+00:00 [running]> on host ca3036c02e01
+[2024-09-06T14:17:30.880+0000] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='weather_etl_dag' AIRFLOW_CTX_TASK_ID='check_data_exists' AIRFLOW_CTX_EXECUTION_DATE='2024-09-02T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-09-02T00:00:00+00:00'
+[2024-09-06T14:17:30.884+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-09-06T14:17:31.301+0000] {python.py:75} INFO - Poking callable: <function check_data_exists at 0x7fd904fc0310>
+[2024-09-06T14:17:32.812+0000] {base.py:336} INFO - Success criteria met. Exiting.
+[2024-09-06T14:17:32.831+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-09-06T14:17:32.832+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=weather_etl_dag, task_id=check_data_exists, run_id=scheduled__2024-09-02T00:00:00+00:00, execution_date=20240902T000000, start_date=20240906T141730, end_date=20240906T141732
+[2024-09-06T14:17:32.955+0000] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2024-09-06T14:17:33.071+0000] {taskinstance.py:3891} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-09-06T14:17:33.245+0000] {local_task_job_runner.py:240} INFO - ::endgroup::

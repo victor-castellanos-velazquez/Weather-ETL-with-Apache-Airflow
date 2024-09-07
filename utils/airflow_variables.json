@@ -1,0 +1,13 @@
+{"r_user": "victor_castellanosv_coderhouse", 
+"r_password": "L4et1wP7eZ", 
+"r_host": "data-engineer-cluster.cyhh5bfevlmn.us-east-1.redshift.amazonaws.com", 
+"r_port": "5439", 
+"r_dbname": "data-engineer-database", 
+"api_key": "075d0bd9bb884536b0a195856241307", 
+"s_host": "smtp.gmail.com", 
+"s_port": "587", 
+"s_user": "pronostico.diario.qro@gmail.com", 
+"s_password": "vtevfbcpplyikbei", 
+"s_mail_from": "pronostico.diario.qro@gmail.com", 
+"s_mail_tls": "True"
+}

@@ -1,0 +1,130 @@
+[2024-09-05T00:33:24.116+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-09-05T00:33:24.213+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: weather_etl_dag.fetch_weather_data scheduled__2024-08-03T00:00:00+00:00 [queued]>
+[2024-09-05T00:33:24.252+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: weather_etl_dag.fetch_weather_data scheduled__2024-08-03T00:00:00+00:00 [queued]>
+[2024-09-05T00:33:24.254+0000] {taskinstance.py:2856} INFO - Starting attempt 1 of 2
+[2024-09-05T00:33:24.375+0000] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): fetch_weather_data> on 2024-08-03 00:00:00+00:00
+[2024-09-05T00:33:24.395+0000] {warnings.py:112} WARNING - /usr/local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=230) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-09-05T00:33:24.396+0000] {standard_task_runner.py:72} INFO - Started process 234 to run task
+[2024-09-05T00:33:24.405+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'weather_etl_dag', 'fetch_weather_data', 'scheduled__2024-08-03T00:00:00+00:00', '--job-id', '27', '--raw', '--subdir', 'DAGS_FOLDER/weather_etl_dag.py', '--cfg-path', '/tmp/tmp6anom8py']
+[2024-09-05T00:33:24.410+0000] {standard_task_runner.py:105} INFO - Job 27: Subtask fetch_weather_data
+[2024-09-05T00:33:24.622+0000] {task_command.py:467} INFO - Running <TaskInstance: weather_etl_dag.fetch_weather_data scheduled__2024-08-03T00:00:00+00:00 [running]> on host b778581f4b0f
+[2024-09-05T00:33:25.574+0000] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='weather_etl_dag' AIRFLOW_CTX_TASK_ID='fetch_weather_data' AIRFLOW_CTX_EXECUTION_DATE='2024-08-03T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-08-03T00:00:00+00:00'
+[2024-09-05T00:33:25.575+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-09-05T00:33:25.626+0000] {logging_mixin.py:190} INFO - Recuperando municipios desde XCom
+[2024-09-05T00:33:26.017+0000] {logging_mixin.py:190} INFO - Número de municipios recuperados: 18
+[2024-09-05T00:33:26.048+0000] {logging_mixin.py:190} INFO - Datos de municipios para obtener clima:    cve_mun              nom_mun  lat_decimal  lon_decimal
+0        1    AMEALCO DE BONFIL    20.186444  -100.144195
+1        2      PINAL DE AMOLES    21.135302   -99.627540
+2        3          ARROYO SECO    21.548036   -99.689166
+3        4  CADEREYTA DE MONTES    20.695023   -99.815633
+4        5                COLON    20.788326  -100.045430
+[2024-09-05T00:33:26.088+0000] {logging_mixin.py:190} INFO - Haciendo solicitud a la API para lat: 20.186444, lon: -100.144195
+[2024-09-05T00:33:26.841+0000] {logging_mixin.py:190} INFO - Respuesta recibida: 200
+[2024-09-05T00:33:26.843+0000] {logging_mixin.py:190} INFO - Haciendo solicitud a la API para lat: 21.135302, lon: -99.62754
+[2024-09-05T00:33:27.491+0000] {logging_mixin.py:190} INFO - Respuesta recibida: 200
+[2024-09-05T00:33:27.494+0000] {logging_mixin.py:190} INFO - Haciendo solicitud a la API para lat: 21.548036, lon: -99.689166
+[2024-09-05T00:33:28.079+0000] {logging_mixin.py:190} INFO - Respuesta recibida: 200
+[2024-09-05T00:33:28.081+0000] {logging_mixin.py:190} INFO - Haciendo solicitud a la API para lat: 20.695023, lon: -99.815633
+[2024-09-05T00:33:28.681+0000] {logging_mixin.py:190} INFO - Respuesta recibida: 200
+[2024-09-05T00:33:28.682+0000] {logging_mixin.py:190} INFO - Haciendo solicitud a la API para lat: 20.788326, lon: -100.04543
+[2024-09-05T00:33:29.303+0000] {logging_mixin.py:190} INFO - Respuesta recibida: 200
+[2024-09-05T00:33:29.306+0000] {logging_mixin.py:190} INFO - Haciendo solicitud a la API para lat: 20.552436, lon: -100.445883
+[2024-09-05T00:33:29.924+0000] {logging_mixin.py:190} INFO - Respuesta recibida: 200
+[2024-09-05T00:33:29.926+0000] {logging_mixin.py:190} INFO - Haciendo solicitud a la API para lat: 20.665295, lon: -99.898405
+[2024-09-05T00:33:30.552+0000] {logging_mixin.py:190} INFO - Respuesta recibida: 200
+[2024-09-05T00:33:30.554+0000] {logging_mixin.py:190} INFO - Haciendo solicitud a la API para lat: 20.375244, lon: -100.274333
+[2024-09-05T00:33:31.215+0000] {logging_mixin.py:190} INFO - Respuesta recibida: 200
+[2024-09-05T00:33:31.220+0000] {logging_mixin.py:190} INFO - Haciendo solicitud a la API para lat: 21.216802, lon: -99.47291
+[2024-09-05T00:33:31.837+0000] {logging_mixin.py:190} INFO - Respuesta recibida: 200
+[2024-09-05T00:33:31.840+0000] {logging_mixin.py:190} INFO - Haciendo solicitud a la API para lat: 21.183456, lon: -99.321914
+[2024-09-05T00:33:32.442+0000] {logging_mixin.py:190} INFO - Respuesta recibida: 200
+[2024-09-05T00:33:32.444+0000] {logging_mixin.py:190} INFO - Haciendo solicitud a la API para lat: 20.60657, lon: -100.331096
+[2024-09-05T00:33:33.028+0000] {logging_mixin.py:190} INFO - Respuesta recibida: 200
+[2024-09-05T00:33:33.031+0000] {logging_mixin.py:190} INFO - Haciendo solicitud a la API para lat: 20.502494, lon: -100.14473
+[2024-09-05T00:33:33.666+0000] {logging_mixin.py:190} INFO - Respuesta recibida: 200
+[2024-09-05T00:33:33.668+0000] {logging_mixin.py:190} INFO - Haciendo solicitud a la API para lat: 21.053631, lon: -99.814526
+[2024-09-05T00:33:34.268+0000] {logging_mixin.py:190} INFO - Respuesta recibida: 200
+[2024-09-05T00:33:34.270+0000] {logging_mixin.py:190} INFO - Haciendo solicitud a la API para lat: 20.593391, lon: -100.389957
+[2024-09-05T00:33:34.862+0000] {logging_mixin.py:190} INFO - Respuesta recibida: 200
+[2024-09-05T00:33:34.864+0000] {logging_mixin.py:190} INFO - Haciendo solicitud a la API para lat: 20.916061, lon: -99.566359
+[2024-09-05T00:33:35.451+0000] {logging_mixin.py:190} INFO - Respuesta recibida: 200
+[2024-09-05T00:33:35.453+0000] {logging_mixin.py:190} INFO - Haciendo solicitud a la API para lat: 20.386441, lon: -99.999631
+[2024-09-05T00:33:36.097+0000] {logging_mixin.py:190} INFO - Respuesta recibida: 200
+[2024-09-05T00:33:36.104+0000] {logging_mixin.py:190} INFO - Haciendo solicitud a la API para lat: 20.518817, lon: -99.88384
+[2024-09-05T00:33:36.722+0000] {logging_mixin.py:190} INFO - Respuesta recibida: 200
+[2024-09-05T00:33:36.724+0000] {logging_mixin.py:190} INFO - Haciendo solicitud a la API para lat: 20.908149, lon: -99.9308
+[2024-09-05T00:33:37.311+0000] {logging_mixin.py:190} INFO - Respuesta recibida: 200
+[2024-09-05T00:33:37.315+0000] {logging_mixin.py:190} INFO - Pronósticos obtenidos: 18
+[2024-09-05T00:33:37.706+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-09-05T00:33:37.729+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-09-05T00:33:37.730+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=weather_etl_dag, task_id=fetch_weather_data, run_id=scheduled__2024-08-03T00:00:00+00:00, execution_date=20240803T000000, start_date=20240905T003324, end_date=20240905T003337
+[2024-09-05T00:33:38.153+0000] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2024-09-05T00:33:38.236+0000] {taskinstance.py:3891} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-09-05T00:33:38.292+0000] {local_task_job_runner.py:240} INFO - ::endgroup::
+[2024-09-05T18:05:59.208+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-09-05T18:06:00.725+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: weather_etl_dag.fetch_weather_data scheduled__2024-08-03T00:00:00+00:00 [queued]>
+[2024-09-05T18:06:00.747+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: weather_etl_dag.fetch_weather_data scheduled__2024-08-03T00:00:00+00:00 [queued]>
+[2024-09-05T18:06:00.751+0000] {taskinstance.py:2856} INFO - Starting attempt 1 of 2
+[2024-09-05T18:06:00.889+0000] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): fetch_weather_data> on 2024-08-03 00:00:00+00:00
+[2024-09-05T18:06:00.908+0000] {warnings.py:112} WARNING - /usr/local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=362) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-09-05T18:06:00.916+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'weather_etl_dag', 'fetch_weather_data', 'scheduled__2024-08-03T00:00:00+00:00', '--job-id', '19', '--raw', '--subdir', 'DAGS_FOLDER/weather_etl_dag.py', '--cfg-path', '/tmp/tmp1sdmiem8']
+[2024-09-05T18:06:00.932+0000] {standard_task_runner.py:72} INFO - Started process 367 to run task
+[2024-09-05T18:06:00.939+0000] {standard_task_runner.py:105} INFO - Job 19: Subtask fetch_weather_data
+[2024-09-05T18:06:01.324+0000] {task_command.py:467} INFO - Running <TaskInstance: weather_etl_dag.fetch_weather_data scheduled__2024-08-03T00:00:00+00:00 [running]> on host 0b8eaea5e88c
+[2024-09-05T18:06:02.334+0000] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='weather_etl_dag' AIRFLOW_CTX_TASK_ID='fetch_weather_data' AIRFLOW_CTX_EXECUTION_DATE='2024-08-03T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-08-03T00:00:00+00:00'
+[2024-09-05T18:06:02.336+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-09-05T18:06:02.349+0000] {logging_mixin.py:190} INFO - Recuperando municipios desde XCom
+[2024-09-05T18:06:02.388+0000] {logging_mixin.py:190} INFO - Número de municipios recuperados: 18
+[2024-09-05T18:06:02.397+0000] {logging_mixin.py:190} INFO - Datos de municipios para obtener clima:    cve_mun              nom_mun  lat_decimal  lon_decimal
+0        1    AMEALCO DE BONFIL    20.186444  -100.144195
+1        2      PINAL DE AMOLES    21.135302   -99.627540
+2        3          ARROYO SECO    21.548036   -99.689166
+3        4  CADEREYTA DE MONTES    20.695023   -99.815633
+4        5                COLON    20.788326  -100.045430
+[2024-09-05T18:06:02.407+0000] {logging_mixin.py:190} INFO - Haciendo solicitud a la API para lat: 20.186444, lon: -100.144195
+[2024-09-05T18:06:03.054+0000] {logging_mixin.py:190} INFO - Respuesta recibida: 200
+[2024-09-05T18:06:03.055+0000] {logging_mixin.py:190} INFO - Haciendo solicitud a la API para lat: 21.135302, lon: -99.62754
+[2024-09-05T18:06:03.750+0000] {logging_mixin.py:190} INFO - Respuesta recibida: 200
+[2024-09-05T18:06:03.752+0000] {logging_mixin.py:190} INFO - Haciendo solicitud a la API para lat: 21.548036, lon: -99.689166
+[2024-09-05T18:06:04.345+0000] {logging_mixin.py:190} INFO - Respuesta recibida: 200
+[2024-09-05T18:06:04.348+0000] {logging_mixin.py:190} INFO - Haciendo solicitud a la API para lat: 20.695023, lon: -99.815633
+[2024-09-05T18:06:04.940+0000] {logging_mixin.py:190} INFO - Respuesta recibida: 200
+[2024-09-05T18:06:04.942+0000] {logging_mixin.py:190} INFO - Haciendo solicitud a la API para lat: 20.788326, lon: -100.04543
+[2024-09-05T18:06:05.573+0000] {logging_mixin.py:190} INFO - Respuesta recibida: 200
+[2024-09-05T18:06:05.574+0000] {logging_mixin.py:190} INFO - Haciendo solicitud a la API para lat: 20.552436, lon: -100.445883
+[2024-09-05T18:06:06.165+0000] {logging_mixin.py:190} INFO - Respuesta recibida: 200
+[2024-09-05T18:06:06.166+0000] {logging_mixin.py:190} INFO - Haciendo solicitud a la API para lat: 20.665295, lon: -99.898405
+[2024-09-05T18:06:06.750+0000] {logging_mixin.py:190} INFO - Respuesta recibida: 200
+[2024-09-05T18:06:06.752+0000] {logging_mixin.py:190} INFO - Haciendo solicitud a la API para lat: 20.375244, lon: -100.274333
+[2024-09-05T18:06:07.345+0000] {logging_mixin.py:190} INFO - Respuesta recibida: 200
+[2024-09-05T18:06:07.347+0000] {logging_mixin.py:190} INFO - Haciendo solicitud a la API para lat: 21.216802, lon: -99.47291
+[2024-09-05T18:06:07.975+0000] {logging_mixin.py:190} INFO - Respuesta recibida: 200
+[2024-09-05T18:06:08.023+0000] {logging_mixin.py:190} INFO - Haciendo solicitud a la API para lat: 21.183456, lon: -99.321914
+[2024-09-05T18:06:08.628+0000] {logging_mixin.py:190} INFO - Respuesta recibida: 200
+[2024-09-05T18:06:08.630+0000] {logging_mixin.py:190} INFO - Haciendo solicitud a la API para lat: 20.60657, lon: -100.331096
+[2024-09-05T18:06:09.211+0000] {logging_mixin.py:190} INFO - Respuesta recibida: 200
+[2024-09-05T18:06:09.213+0000] {logging_mixin.py:190} INFO - Haciendo solicitud a la API para lat: 20.502494, lon: -100.14473
+[2024-09-05T18:06:10.062+0000] {logging_mixin.py:190} INFO - Respuesta recibida: 200
+[2024-09-05T18:06:10.063+0000] {logging_mixin.py:190} INFO - Haciendo solicitud a la API para lat: 21.053631, lon: -99.814526
+[2024-09-05T18:06:10.644+0000] {logging_mixin.py:190} INFO - Respuesta recibida: 200
+[2024-09-05T18:06:10.646+0000] {logging_mixin.py:190} INFO - Haciendo solicitud a la API para lat: 20.593391, lon: -100.389957
+[2024-09-05T18:06:11.233+0000] {logging_mixin.py:190} INFO - Respuesta recibida: 200
+[2024-09-05T18:06:11.235+0000] {logging_mixin.py:190} INFO - Haciendo solicitud a la API para lat: 20.916061, lon: -99.566359
+[2024-09-05T18:06:11.840+0000] {logging_mixin.py:190} INFO - Respuesta recibida: 200
+[2024-09-05T18:06:11.842+0000] {logging_mixin.py:190} INFO - Haciendo solicitud a la API para lat: 20.386441, lon: -99.999631
+[2024-09-05T18:06:12.451+0000] {logging_mixin.py:190} INFO - Respuesta recibida: 200
+[2024-09-05T18:06:12.454+0000] {logging_mixin.py:190} INFO - Haciendo solicitud a la API para lat: 20.518817, lon: -99.88384
+[2024-09-05T18:06:13.083+0000] {logging_mixin.py:190} INFO - Respuesta recibida: 200
+[2024-09-05T18:06:13.086+0000] {logging_mixin.py:190} INFO - Haciendo solicitud a la API para lat: 20.908149, lon: -99.9308
+[2024-09-05T18:06:13.669+0000] {logging_mixin.py:190} INFO - Respuesta recibida: 200
+[2024-09-05T18:06:13.675+0000] {logging_mixin.py:190} INFO - Pronósticos obtenidos: 18
+[2024-09-05T18:06:13.770+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-09-05T18:06:13.792+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-09-05T18:06:13.793+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=weather_etl_dag, task_id=fetch_weather_data, run_id=scheduled__2024-08-03T00:00:00+00:00, execution_date=20240803T000000, start_date=20240905T180600, end_date=20240905T180613
+[2024-09-05T18:06:14.036+0000] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2024-09-05T18:06:14.079+0000] {taskinstance.py:3891} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-09-05T18:06:14.137+0000] {local_task_job_runner.py:240} INFO - ::endgroup::

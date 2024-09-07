@@ -1,0 +1,30 @@
+[2024-09-07T15:05:48.517+0000] {processor.py:186} INFO - Started process (PID=9560) to work on /root/airflow/dags/weather_etl.py
+[2024-09-07T15:05:48.518+0000] {processor.py:914} INFO - Processing file /root/airflow/dags/weather_etl.py for tasks to queue
+[2024-09-07T15:05:48.520+0000] {logging_mixin.py:190} INFO - [2024-09-07T15:05:48.520+0000] {dagbag.py:587} INFO - Filling up the DagBag from /root/airflow/dags/weather_etl.py
+[2024-09-07T15:05:50.885+0000] {processor.py:927} WARNING - No viable dags retrieved from /root/airflow/dags/weather_etl.py
+[2024-09-07T15:05:50.960+0000] {processor.py:208} INFO - Processing /root/airflow/dags/weather_etl.py took 2.451 seconds
+[2024-09-07T15:07:16.172+0000] {processor.py:186} INFO - Started process (PID=9585) to work on /root/airflow/dags/weather_etl.py
+[2024-09-07T15:07:16.174+0000] {processor.py:914} INFO - Processing file /root/airflow/dags/weather_etl.py for tasks to queue
+[2024-09-07T15:07:16.175+0000] {logging_mixin.py:190} INFO - [2024-09-07T15:07:16.175+0000] {dagbag.py:587} INFO - Filling up the DagBag from /root/airflow/dags/weather_etl.py
+[2024-09-07T15:07:17.781+0000] {processor.py:927} WARNING - No viable dags retrieved from /root/airflow/dags/weather_etl.py
+[2024-09-07T15:07:17.848+0000] {processor.py:208} INFO - Processing /root/airflow/dags/weather_etl.py took 1.685 seconds
+[2024-09-07T15:17:18.282+0000] {processor.py:186} INFO - Started process (PID=9714) to work on /root/airflow/dags/weather_etl.py
+[2024-09-07T15:17:18.284+0000] {processor.py:914} INFO - Processing file /root/airflow/dags/weather_etl.py for tasks to queue
+[2024-09-07T15:17:18.293+0000] {logging_mixin.py:190} INFO - [2024-09-07T15:17:18.293+0000] {dagbag.py:587} INFO - Filling up the DagBag from /root/airflow/dags/weather_etl.py
+[2024-09-07T15:17:19.543+0000] {processor.py:927} WARNING - No viable dags retrieved from /root/airflow/dags/weather_etl.py
+[2024-09-07T15:17:19.556+0000] {processor.py:208} INFO - Processing /root/airflow/dags/weather_etl.py took 1.282 seconds
+[2024-09-07T15:27:20.005+0000] {processor.py:186} INFO - Started process (PID=9838) to work on /root/airflow/dags/weather_etl.py
+[2024-09-07T15:27:20.006+0000] {processor.py:914} INFO - Processing file /root/airflow/dags/weather_etl.py for tasks to queue
+[2024-09-07T15:27:20.007+0000] {logging_mixin.py:190} INFO - [2024-09-07T15:27:20.007+0000] {dagbag.py:587} INFO - Filling up the DagBag from /root/airflow/dags/weather_etl.py
+[2024-09-07T15:27:21.603+0000] {processor.py:927} WARNING - No viable dags retrieved from /root/airflow/dags/weather_etl.py
+[2024-09-07T15:27:21.616+0000] {processor.py:208} INFO - Processing /root/airflow/dags/weather_etl.py took 1.617 seconds
+[2024-09-07T15:37:21.757+0000] {processor.py:186} INFO - Started process (PID=9968) to work on /root/airflow/dags/weather_etl.py
+[2024-09-07T15:37:21.758+0000] {processor.py:914} INFO - Processing file /root/airflow/dags/weather_etl.py for tasks to queue
+[2024-09-07T15:37:21.759+0000] {logging_mixin.py:190} INFO - [2024-09-07T15:37:21.759+0000] {dagbag.py:587} INFO - Filling up the DagBag from /root/airflow/dags/weather_etl.py
+[2024-09-07T15:37:22.908+0000] {processor.py:927} WARNING - No viable dags retrieved from /root/airflow/dags/weather_etl.py
+[2024-09-07T15:37:22.921+0000] {processor.py:208} INFO - Processing /root/airflow/dags/weather_etl.py took 1.171 seconds
+[2024-09-07T15:47:23.190+0000] {processor.py:186} INFO - Started process (PID=10097) to work on /root/airflow/dags/weather_etl.py
+[2024-09-07T15:47:23.191+0000] {processor.py:914} INFO - Processing file /root/airflow/dags/weather_etl.py for tasks to queue
+[2024-09-07T15:47:23.194+0000] {logging_mixin.py:190} INFO - [2024-09-07T15:47:23.193+0000] {dagbag.py:587} INFO - Filling up the DagBag from /root/airflow/dags/weather_etl.py
+[2024-09-07T15:47:24.962+0000] {processor.py:927} WARNING - No viable dags retrieved from /root/airflow/dags/weather_etl.py
+[2024-09-07T15:47:24.996+0000] {processor.py:208} INFO - Processing /root/airflow/dags/weather_etl.py took 1.820 seconds

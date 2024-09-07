@@ -1,0 +1,8 @@
+[2024-09-06T21:18:02.721+0000] {processor.py:186} INFO - Started process (PID=2594) to work on /root/airflow/dags/dag_prueba.py
+[2024-09-06T21:18:02.722+0000] {processor.py:914} INFO - Processing file /root/airflow/dags/dag_prueba.py for tasks to queue
+[2024-09-06T21:18:02.723+0000] {logging_mixin.py:190} INFO - [2024-09-06T21:18:02.723+0000] {dagbag.py:587} INFO - Filling up the DagBag from /root/airflow/dags/dag_prueba.py
+[2024-09-06T21:18:02.748+0000] {processor.py:925} INFO - DAG(s) 'test_email_dag' retrieved from /root/airflow/dags/dag_prueba.py
+[2024-09-06T21:18:03.494+0000] {logging_mixin.py:190} INFO - [2024-09-06T21:18:03.494+0000] {dag.py:3211} INFO - Sync 1 DAGs
+[2024-09-06T21:18:03.694+0000] {logging_mixin.py:190} INFO - [2024-09-06T21:18:03.694+0000] {dag.py:3234} INFO - Creating ORM DAG for test_email_dag
+[2024-09-06T21:18:03.695+0000] {logging_mixin.py:190} INFO - [2024-09-06T21:18:03.695+0000] {dag.py:4138} INFO - Setting next_dagrun for test_email_dag to None, run_after=None
+[2024-09-06T21:18:03.754+0000] {processor.py:208} INFO - Processing /root/airflow/dags/dag_prueba.py took 1.039 seconds

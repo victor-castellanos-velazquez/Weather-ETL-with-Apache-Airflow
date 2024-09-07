@@ -1,0 +1,83 @@
+[2024-08-14T04:34:02.434+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-08-14T04:34:02.688+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: weather_etl_dag.update_sequia_indicator manual__2024-08-14T04:31:22.695827+00:00 [queued]>
+[2024-08-14T04:34:02.741+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: weather_etl_dag.update_sequia_indicator manual__2024-08-14T04:31:22.695827+00:00 [queued]>
+[2024-08-14T04:34:03.288+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-08-14T04:34:03.504+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): update_sequia_indicator> on 2024-08-14 04:31:22.695827+00:00
+[2024-08-14T04:34:03.521+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62: DeprecationWarning: This process (pid=2879) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-08-14T04:34:03.517+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'weather_etl_dag', 'update_sequia_indicator', 'manual__2024-08-14T04:31:22.695827+00:00', '--job-id', '88', '--raw', '--subdir', 'DAGS_FOLDER/weather_etl_dag.py', '--cfg-path', '/tmp/tmpd3drwp3l']
+[2024-08-14T04:34:03.526+0000] {standard_task_runner.py:91} INFO - Job 88: Subtask update_sequia_indicator
+[2024-08-14T04:34:03.522+0000] {standard_task_runner.py:64} INFO - Started process 2881 to run task
+[2024-08-14T04:34:03.651+0000] {task_command.py:426} INFO - Running <TaskInstance: weather_etl_dag.update_sequia_indicator manual__2024-08-14T04:31:22.695827+00:00 [running]> on host 712d18ef94ea
+[2024-08-14T04:34:03.948+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='weather_etl_dag' AIRFLOW_CTX_TASK_ID='update_sequia_indicator' AIRFLOW_CTX_EXECUTION_DATE='2024-08-14T04:31:22.695827+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-08-14T04:31:22.695827+00:00'
+[2024-08-14T04:34:03.958+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-08-14T04:34:03.987+0000] {logging_mixin.py:188} INFO - iniciando conexion a redshift para actualizar sequia
+[2024-08-14T04:34:04.063+0000] {logging_mixin.py:188} INFO - Número de registros a actualizar en la tabla: 54
+[2024-08-14T04:34:04.077+0000] {logging_mixin.py:188} INFO - Datos para actualizar en la tabla:    cve_mun          municipio fecha_pronostico indicador_sequia
+0        1  Amealco De Bonfil       2024-08-13               D4
+1        1  Amealco De Bonfil       2024-08-13               D4
+2        2    Pinal De Amoles       2024-08-13               D1
+3        2    Pinal De Amoles       2024-08-13               D1
+4        3        Arroyo Seco       2024-08-13               D0
+[2024-08-14T04:34:04.874+0000] {logging_mixin.py:188} INFO - actualizacion realizada para cve_mun: 1, fecha_pronostico:2024-08-13
+[2024-08-14T04:34:05.020+0000] {logging_mixin.py:188} INFO - actualizacion realizada para cve_mun: 1, fecha_pronostico:2024-08-13
+[2024-08-14T04:34:05.168+0000] {logging_mixin.py:188} INFO - actualizacion realizada para cve_mun: 2, fecha_pronostico:2024-08-13
+[2024-08-14T04:34:05.300+0000] {logging_mixin.py:188} INFO - actualizacion realizada para cve_mun: 2, fecha_pronostico:2024-08-13
+[2024-08-14T04:34:06.229+0000] {logging_mixin.py:188} INFO - actualizacion realizada para cve_mun: 3, fecha_pronostico:2024-08-13
+[2024-08-14T04:34:06.382+0000] {logging_mixin.py:188} INFO - actualizacion realizada para cve_mun: 3, fecha_pronostico:2024-08-13
+[2024-08-14T04:34:06.533+0000] {logging_mixin.py:188} INFO - actualizacion realizada para cve_mun: 4, fecha_pronostico:2024-08-13
+[2024-08-14T04:34:06.681+0000] {logging_mixin.py:188} INFO - actualizacion realizada para cve_mun: 4, fecha_pronostico:2024-08-13
+[2024-08-14T04:34:06.828+0000] {logging_mixin.py:188} INFO - actualizacion realizada para cve_mun: 5, fecha_pronostico:2024-08-13
+[2024-08-14T04:34:06.985+0000] {logging_mixin.py:188} INFO - actualizacion realizada para cve_mun: 5, fecha_pronostico:2024-08-13
+[2024-08-14T04:34:07.122+0000] {logging_mixin.py:188} INFO - actualizacion realizada para cve_mun: 6, fecha_pronostico:2024-08-13
+[2024-08-14T04:34:07.304+0000] {logging_mixin.py:188} INFO - actualizacion realizada para cve_mun: 6, fecha_pronostico:2024-08-13
+[2024-08-14T04:34:07.479+0000] {logging_mixin.py:188} INFO - actualizacion realizada para cve_mun: 7, fecha_pronostico:2024-08-13
+[2024-08-14T04:34:07.642+0000] {logging_mixin.py:188} INFO - actualizacion realizada para cve_mun: 7, fecha_pronostico:2024-08-13
+[2024-08-14T04:34:07.804+0000] {logging_mixin.py:188} INFO - actualizacion realizada para cve_mun: 8, fecha_pronostico:2024-08-13
+[2024-08-14T04:34:07.972+0000] {logging_mixin.py:188} INFO - actualizacion realizada para cve_mun: 8, fecha_pronostico:2024-08-13
+[2024-08-14T04:34:08.121+0000] {logging_mixin.py:188} INFO - actualizacion realizada para cve_mun: 9, fecha_pronostico:2024-08-13
+[2024-08-14T04:34:08.289+0000] {logging_mixin.py:188} INFO - actualizacion realizada para cve_mun: 9, fecha_pronostico:2024-08-13
+[2024-08-14T04:34:08.468+0000] {logging_mixin.py:188} INFO - actualizacion realizada para cve_mun: 10, fecha_pronostico:2024-08-13
+[2024-08-14T04:34:08.673+0000] {logging_mixin.py:188} INFO - actualizacion realizada para cve_mun: 10, fecha_pronostico:2024-08-13
+[2024-08-14T04:34:08.853+0000] {logging_mixin.py:188} INFO - actualizacion realizada para cve_mun: 11, fecha_pronostico:2024-08-13
+[2024-08-14T04:34:09.008+0000] {logging_mixin.py:188} INFO - actualizacion realizada para cve_mun: 11, fecha_pronostico:2024-08-13
+[2024-08-14T04:34:09.182+0000] {logging_mixin.py:188} INFO - actualizacion realizada para cve_mun: 12, fecha_pronostico:2024-08-13
+[2024-08-14T04:34:09.354+0000] {logging_mixin.py:188} INFO - actualizacion realizada para cve_mun: 12, fecha_pronostico:2024-08-13
+[2024-08-14T04:34:09.988+0000] {logging_mixin.py:188} INFO - actualizacion realizada para cve_mun: 13, fecha_pronostico:2024-08-13
+[2024-08-14T04:34:10.178+0000] {logging_mixin.py:188} INFO - actualizacion realizada para cve_mun: 13, fecha_pronostico:2024-08-13
+[2024-08-14T04:34:10.358+0000] {logging_mixin.py:188} INFO - actualizacion realizada para cve_mun: 14, fecha_pronostico:2024-08-13
+[2024-08-14T04:34:10.524+0000] {logging_mixin.py:188} INFO - actualizacion realizada para cve_mun: 14, fecha_pronostico:2024-08-13
+[2024-08-14T04:34:10.702+0000] {logging_mixin.py:188} INFO - actualizacion realizada para cve_mun: 15, fecha_pronostico:2024-08-13
+[2024-08-14T04:34:12.511+0000] {logging_mixin.py:188} INFO - actualizacion realizada para cve_mun: 15, fecha_pronostico:2024-08-13
+[2024-08-14T04:34:12.871+0000] {logging_mixin.py:188} INFO - actualizacion realizada para cve_mun: 16, fecha_pronostico:2024-08-13
+[2024-08-14T04:34:13.054+0000] {logging_mixin.py:188} INFO - actualizacion realizada para cve_mun: 16, fecha_pronostico:2024-08-13
+[2024-08-14T04:34:13.201+0000] {logging_mixin.py:188} INFO - actualizacion realizada para cve_mun: 17, fecha_pronostico:2024-08-13
+[2024-08-14T04:34:13.423+0000] {logging_mixin.py:188} INFO - actualizacion realizada para cve_mun: 17, fecha_pronostico:2024-08-13
+[2024-08-14T04:34:13.569+0000] {logging_mixin.py:188} INFO - actualizacion realizada para cve_mun: 18, fecha_pronostico:2024-08-13
+[2024-08-14T04:34:13.705+0000] {logging_mixin.py:188} INFO - actualizacion realizada para cve_mun: 18, fecha_pronostico:2024-08-13
+[2024-08-14T04:34:13.835+0000] {logging_mixin.py:188} INFO - actualizacion realizada para cve_mun: 1, fecha_pronostico:2024-08-13
+[2024-08-14T04:34:13.964+0000] {logging_mixin.py:188} INFO - actualizacion realizada para cve_mun: 2, fecha_pronostico:2024-08-13
+[2024-08-14T04:34:14.102+0000] {logging_mixin.py:188} INFO - actualizacion realizada para cve_mun: 3, fecha_pronostico:2024-08-13
+[2024-08-14T04:34:14.232+0000] {logging_mixin.py:188} INFO - actualizacion realizada para cve_mun: 4, fecha_pronostico:2024-08-13
+[2024-08-14T04:34:14.366+0000] {logging_mixin.py:188} INFO - actualizacion realizada para cve_mun: 5, fecha_pronostico:2024-08-13
+[2024-08-14T04:34:14.497+0000] {logging_mixin.py:188} INFO - actualizacion realizada para cve_mun: 6, fecha_pronostico:2024-08-13
+[2024-08-14T04:34:14.633+0000] {logging_mixin.py:188} INFO - actualizacion realizada para cve_mun: 7, fecha_pronostico:2024-08-13
+[2024-08-14T04:34:14.770+0000] {logging_mixin.py:188} INFO - actualizacion realizada para cve_mun: 8, fecha_pronostico:2024-08-13
+[2024-08-14T04:34:14.908+0000] {logging_mixin.py:188} INFO - actualizacion realizada para cve_mun: 9, fecha_pronostico:2024-08-13
+[2024-08-14T04:34:15.049+0000] {logging_mixin.py:188} INFO - actualizacion realizada para cve_mun: 10, fecha_pronostico:2024-08-13
+[2024-08-14T04:34:15.202+0000] {logging_mixin.py:188} INFO - actualizacion realizada para cve_mun: 11, fecha_pronostico:2024-08-13
+[2024-08-14T04:34:15.455+0000] {logging_mixin.py:188} INFO - actualizacion realizada para cve_mun: 12, fecha_pronostico:2024-08-13
+[2024-08-14T04:34:15.614+0000] {logging_mixin.py:188} INFO - actualizacion realizada para cve_mun: 13, fecha_pronostico:2024-08-13
+[2024-08-14T04:34:15.805+0000] {logging_mixin.py:188} INFO - actualizacion realizada para cve_mun: 14, fecha_pronostico:2024-08-13
+[2024-08-14T04:34:15.963+0000] {logging_mixin.py:188} INFO - actualizacion realizada para cve_mun: 15, fecha_pronostico:2024-08-13
+[2024-08-14T04:34:16.107+0000] {logging_mixin.py:188} INFO - actualizacion realizada para cve_mun: 16, fecha_pronostico:2024-08-13
+[2024-08-14T04:34:16.268+0000] {logging_mixin.py:188} INFO - actualizacion realizada para cve_mun: 17, fecha_pronostico:2024-08-13
+[2024-08-14T04:34:16.491+0000] {logging_mixin.py:188} INFO - actualizacion realizada para cve_mun: 18, fecha_pronostico:2024-08-13
+[2024-08-14T04:34:16.611+0000] {logging_mixin.py:188} INFO - tosdas las actualizaciones se han realizado con exito
+[2024-08-14T04:34:16.612+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-08-14T04:34:16.613+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-08-14T04:34:16.623+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=weather_etl_dag, task_id=update_sequia_indicator, run_id=manual__2024-08-14T04:31:22.695827+00:00, execution_date=20240814T043122, start_date=20240814T043402, end_date=20240814T043416
+[2024-08-14T04:34:17.406+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2024-08-14T04:34:17.479+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-08-14T04:34:17.572+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

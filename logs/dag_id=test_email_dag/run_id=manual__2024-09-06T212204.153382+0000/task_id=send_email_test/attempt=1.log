@@ -1,0 +1,18 @@
+[2024-09-06T21:22:10.102+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-09-06T21:22:10.130+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: test_email_dag.send_email_test manual__2024-09-06T21:22:04.153382+00:00 [queued]>
+[2024-09-06T21:22:10.193+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: test_email_dag.send_email_test manual__2024-09-06T21:22:04.153382+00:00 [queued]>
+[2024-09-06T21:22:10.195+0000] {taskinstance.py:2856} INFO - Starting attempt 1 of 1
+[2024-09-06T21:22:10.257+0000] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): send_email_test> on 2024-09-06 21:22:04.153382+00:00
+[2024-09-06T21:22:10.266+0000] {standard_task_runner.py:72} INFO - Started process 2785 to run task
+[2024-09-06T21:22:10.272+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'test_email_dag', 'send_email_test', 'manual__2024-09-06T21:22:04.153382+00:00', '--job-id', '29', '--raw', '--subdir', 'DAGS_FOLDER/test_email_dag.py', '--cfg-path', '/tmp/tmpoav4duu8']
+[2024-09-06T21:22:10.275+0000] {standard_task_runner.py:105} INFO - Job 29: Subtask send_email_test
+[2024-09-06T21:22:10.431+0000] {task_command.py:467} INFO - Running <TaskInstance: test_email_dag.send_email_test manual__2024-09-06T21:22:04.153382+00:00 [running]> on host ca3036c02e01
+[2024-09-06T21:22:10.653+0000] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='test_email_dag' AIRFLOW_CTX_TASK_ID='send_email_test' AIRFLOW_CTX_EXECUTION_DATE='2024-09-06T21:22:04.153382+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-06T21:22:04.153382+00:00'
+[2024-09-06T21:22:10.656+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-09-06T21:22:10.671+0000] {logging_mixin.py:190} INFO - Enviando correo de prueba...
+[2024-09-06T21:22:10.671+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-09-06T21:22:10.682+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-09-06T21:22:10.683+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=test_email_dag, task_id=send_email_test, run_id=manual__2024-09-06T21:22:04.153382+00:00, execution_date=20240906T212204, start_date=20240906T212210, end_date=20240906T212210
+[2024-09-06T21:22:10.751+0000] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2024-09-06T21:22:10.768+0000] {taskinstance.py:3891} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-09-06T21:22:10.810+0000] {local_task_job_runner.py:240} INFO - ::endgroup::
