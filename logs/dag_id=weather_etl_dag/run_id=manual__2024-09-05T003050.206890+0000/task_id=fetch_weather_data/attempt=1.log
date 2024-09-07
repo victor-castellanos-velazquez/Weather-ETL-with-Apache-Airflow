@@ -1,3 +1,0 @@
-[2024-09-05T01:00:21.927+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
-[2024-09-05T01:00:21.950+0000] {taskinstance.py:2593} INFO - Dependencies not met for <TaskInstance: weather_etl_dag.fetch_weather_data manual__2024-09-05T00:30:50.206890+00:00 [up_for_retry]>, dependency 'Not In Retry Period' FAILED: Task is not ready for retry yet but will be retried automatically. Current date is 2024-09-05T01:00:21.949439+00:00 and task will be retried at 2024-09-05T01:04:34.414232+00:00.
-[2024-09-05T01:00:22.030+0000] {local_task_job_runner.py:166} INFO - Task is not able to be run
