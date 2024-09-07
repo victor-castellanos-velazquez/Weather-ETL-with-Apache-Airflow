@@ -1,0 +1,6 @@
+utils/airflow_variables.json
+
+__pycache__/
+logs/
+*.env
+*.sh

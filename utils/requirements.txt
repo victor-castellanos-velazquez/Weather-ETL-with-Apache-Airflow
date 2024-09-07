@@ -1,0 +1,12 @@
+pandas
+unidecode
+requests
+sqlalchemy
+psycopg2-binary
+tqdm
+pymysql
+redshift_connector
+translate
+apache-airflow
+apache-airflow-providers-celery
+pyarrow
